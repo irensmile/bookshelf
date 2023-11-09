@@ -1,1 +1,1 @@
-{"version":3,"file":"commonHelpers2.js","sources":[],"sourcesContent":[],"names":[],"mappings":""}
+{"version":3,"file":"commonHelpers2.js","sources":["../src/js/shoppinglist.js"],"sourcesContent":["\nconst elements = {\ncontainer: document.querySelector('.js-list')\n}\n\nconst products = JSON.parse(localStorage.getItem);"],"names":[],"mappings":"oDAEW,SAAS,cAAc,UAAU,EAG3B,KAAK,MAAM,aAAa,OAAO"}

@@ -1,1 +1,0 @@
-{"version":3,"file":"shoppinglist-9a2feb87.js","sources":["../../src/js/shoppinglist.js"],"sourcesContent":["const elements = {\ncontainer: document.querySelector('.js-list')\n}\n\nconst products = JSON.parse(localStorage.getItem);"],"names":[],"mappings":"ssBACW,SAAS,cAAc,UAAU,EAG3B,KAAK,MAAM,aAAa,OAAO"}
