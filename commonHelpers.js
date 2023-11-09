@@ -1,0 +1,2 @@
+import"./assets/modulepreload-polyfill-ec808ebb.js";const n=document.querySelector(".categories-list");function c(){return fetch("https://books-backend.p.goit.global/books/category-list").then(t=>{if(!t.ok)throw new Error;return t.json()})}function r(){c().then(t=>{i(t)}).catch(t=>{console.log(t)})}function i(t){const o=t.map(e=>`<li class="categ-item">${e.list_name}</li>`).join("");n.insertAdjacentHTML("beforeend",o)}r();
+//# sourceMappingURL=commonHelpers.js.map
