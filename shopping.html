@@ -18,16 +18,87 @@
     />
     
     <script type="module" crossorigin src="/project-ScriptMasters14/commonHelpers2.js"></script>
-    <link rel="modulepreload" crossorigin href="/project-ScriptMasters14/assets/modulepreload-polyfill-ec808ebb.js">
-    <link rel="stylesheet" href="/project-ScriptMasters14/assets/shopping-672654cf.css">
+    <link rel="modulepreload" crossorigin href="/project-ScriptMasters14/assets/header-89b59c6d.js">
+    <link rel="stylesheet" href="/project-ScriptMasters14/assets/shopping-dda9e2db.css">
   </head>
   <body>
     
     <header>
-      <ul>
-  <li><a href="./index.html">Home</a></li>
-  <li><a href="./shopping.html">Shopping</a></li>
-</ul>
+      <header class="header">
+  <div class="container">
+    <div class="left-col">
+      <a href="./index.html" class="logo" aria-label="Logo link on page">
+        <svg width="109" height="28" aria-label="Page Logo">
+          <use href="/project-ScriptMasters14/assets/icons-fcf7ec60.svg#icon-logo"></use>
+        </svg>
+      </a>
+    
+      <ul class="menu">
+        <li class="menu-item home">
+          <a href="./index.html" class="menu-link" aria-label="Home">Home</a>
+        </li>
+        <li class="menu-item">
+          <a href="./shopping.html" class="menu-link" aria-label="Shopping list">
+            Shopping
+            <svg width="20" height="20" aria-label="Basket icon">
+              <use href="/project-ScriptMasters14/assets/icons-fcf7ec60.svg#icon-basket"></use>
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="right-col">
+      <div class="box-toggle">
+        <div class="circle">
+          <img src="./images/icon-toggle.svg" alt="toggle" />
+        </div>
+      </div>
+      
+      <button
+        type="button"
+        class="avatar-button btn-main-signup"
+        id="sign-in-button-main"
+        aria-label="Sign in button main page"
+      >
+        <span class="box-sign-up">
+          Sign up
+          <svg
+            width="23"
+            height="26"
+            class="icon"
+            aria-label="Sign in button icon"
+          >
+            <use href="/project-ScriptMasters14/assets/icons-fcf7ec60.svg#icon-arrow-right"></use>
+          </svg>
+        </span>
+      </button>
+      <button
+        type="button"
+        class="mob-menu"
+        id="mobile-burger"
+        aria-label="Mobile menu button"
+      >
+        <svg
+          width="26"
+          height="26"
+          class="hamburger"
+          aria-label="Mobile menu icon open"
+        >
+          <use href="/project-ScriptMasters14/assets/icons-fcf7ec60.svg#icon-burger"></use>
+        </svg>
+        <svg
+          width="26"
+          height="26"
+          class="close"
+          aria-label="Mobile menu icon close"
+        >
+          <use href="/project-ScriptMasters14/assets/icons-fcf7ec60.svg#icon-close"></use>
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+
 
     </header>
     <main>
