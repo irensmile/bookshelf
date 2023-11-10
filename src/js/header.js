@@ -21,4 +21,4 @@ function onClickMobMenu(event) {
   }
 }
 
-document.querySelector('#bestsellers').classList.add('active');
+// document.querySelector('#bestsellers').classList.add('active');
