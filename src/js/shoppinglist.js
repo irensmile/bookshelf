@@ -3,7 +3,8 @@ const elements = {
 container: document.querySelector('.js-list'),
 totalQuantity: document.querySelector('.js-quantity'),
 clearBtn: document.querySelector('.js-close'),
-pageName: document.querySelector('.js-title')
+pageName: document.querySelector('.js-title'),
+// booksImg: document.querySelector('.js-books')
 }
 const BOOKS_KEY = 'shoppinglist'
 const books = JSON.parse(localStorage.getItem(BOOKS_KEY)) ?? [];
