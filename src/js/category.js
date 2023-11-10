@@ -15,7 +15,7 @@ async function fetchCategories() {
 
         categories.map(category => {
           const li = document.createElement('li');
-          li.textContent = category.name;
+          li.textContent = category.list_name;
           categoriesList.appendChild(li);
         });
       } else {
