@@ -21,4 +21,3 @@ function onClickMobMenu(event) {
   }
 }
 
-// document.querySelector('#bestsellers').classList.add('active');
