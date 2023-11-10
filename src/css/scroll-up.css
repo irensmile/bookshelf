@@ -1,32 +1,55 @@
 .scroll-up-btn {
   position: fixed;
   bottom: 5%;
-  right: 5%;
+  right: 9%;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  width: 55px;
-  height: 55px;
+  width: 54px;
+  height: 54px;
   padding: 0;
 
-  font-family: 'Montserrat', sans-serif;
+  /* font-family: 'Montserrat', sans-serif;
   font-size: 20px;
-  color: var(--secondary-color);
-  background-color: rgba(208, 201, 247, 0.6);
+  color: var(--secondary-color); */
+  background-color: rgba(79, 46, 232, 0.3);
 
   border: none;
   border-radius: 50%;
-  box-shadow: 2px 1px 3px 0px rgba(0, 0, 0, 0.3);
+  /* box-shadow: 2px 1px 3px 0px rgba(0, 0, 0, 0.3); */
 
   transition: background-color 350ms ease-in-out, scale 350ms ease-in-out;
 }
 
+.scroll-up-btn::before {
+  content: '';
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  /* top: -19px;
+  left: -12px; */
+  background-color: rgba(79, 46, 232, 0.3);
+  border-radius: 50%;
+  z-index: -1;
+}
+
 @media (min-width: 768px) {
   .scroll-up-btn {
-    width: 70px;
-    height: 70px;
+    right: 4%;
+    width: 65px;
+    height: 65px;
+  }
+
+  .scroll-up-btn::before {
+    width: 75px;
+    height: 75px;
+  }
+
+  .scroll-up-btn .arrow {
+    width: 30px;
+    height: 30px;
   }
 }
 
@@ -35,10 +58,10 @@
 }
 
 .scroll-up-btn:hover {
-  background-color: rgba(137, 121, 226, 0.6);
+  background-color: var(--same-blue);
   scale: 1.05;
 }
 
-.scroll-up-btn .arrow {
+/* .scroll-up-btn .arrow {
   fill: var(--secondary-color);
-}
+} */
