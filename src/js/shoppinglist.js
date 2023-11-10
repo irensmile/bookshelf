@@ -30,6 +30,11 @@ if (books.length){
   elements.clearBtn.addEventListener(click, handlerClearBasket)
   } else {
     elements.totalQuantity.textContent = 'This page is empty, add some books and proceed to order.'
+    `<picture>
+    <source srcset="./images/books1-x-tablet.jpg 1x, ../images/books2-x-tablet.jpg 2x, media="(min-width: 768px)">
+    <img src="./images/books.jpg" alt="фото книг" width="322">
+    </picture>`
+
   }
 
 
