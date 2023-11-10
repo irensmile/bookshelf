@@ -85,8 +85,13 @@
     background: linear-gradient(180deg, #4f2ee8 0%, #dcdcdc 100%);
     box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.1) inset;
   }
+  .white-circle {
+    fill: #fff;
+  }
   .circle {
     position: absolute;
+    
+    width: 18px;
     left: -2px;
     top: -1px;
     transition: transform 0.3s;
@@ -155,8 +160,9 @@
   } */
   
   .hamburger {
-    fill: #111;
+    stroke: #111;
   }
+  
   .avatar-title,
   .sign-up-title {
     color: #fff;
@@ -184,6 +190,9 @@
   }
   .mob-menu .close {
     display: none;
+  }
+  .close {
+    stroke: #111;
   }
   .mob-menu svg {
     position: absolute;
