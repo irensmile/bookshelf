@@ -1,0 +1,126 @@
+/**
+  |============================
+  | CATEGORIES
+  |============================
+*/
+
+.categ-funds {
+    padding-top: 40px;
+}
+
+.categ-funds-container {
+    padding-right: 20px;
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    gap: 40px;
+}
+
+.categories {
+    max-width: 335px;
+    overflow-y: scroll;
+    max-height: 228px;
+    font-family: 'DM Sans', sans-serif;
+    color: rgba(17, 17, 17, 0.60);
+    line-height: 1.125;
+    letter-spacing: -0.02em;
+}
+
+.categ-item:not(:last-child) {
+    margin-bottom: 24px;
+}
+
+.is-active {
+    color: var(--location-text-color);
+    font-weight: 700;
+    line-height: 1.125;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+}
+
+/**
+  |============================
+  | FUNDS
+  |============================
+*/
+
+.funds {
+    max-width: 335px;
+    max-height: 460px;
+    flex-shrink: 0;
+    border-radius: 16px;
+    background: radial-gradient(189.32% 190.93% at 59.76% -23.42%, #4F2EE8 18.03%, #FFF 100%);
+    box-shadow: 0px 10px 10px 0px rgba(245, 245, 247, 0.10);
+    padding: 24px 52px 20px 40px;
+}
+
+.support {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    align-items: center;
+    margin-bottom: 44px;
+}
+
+.sup-title {
+    color: var(--secondary-color);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 22px;
+    line-height: 1.1;
+    letter-spacing: -0.04em;
+}
+
+.trident-icon {
+    fill: var(--secondary-color);
+}
+
+.organizations {
+    margin-bottom: 20px;
+}
+
+.org-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    overflow: hidden;
+    height: 292px;
+}
+
+.org-item {
+    color: var(--secondary-color);
+    font-family: DM Sans;
+    font-size: 14px;
+    line-height: 1.2;
+    letter-spacing: -0.04em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+}
+
+.org-img {
+    max-width: 130px;
+    max-height: 32px;
+    filter: brightness(0) invert(1);
+}
+
+.btn-up {
+    width: 32px;
+    height: 32px;
+    border-radius: 50px;
+    border: 3px solid rgba(53, 53, 147, 0.1);
+    background-color: var(--secondary-color);
+    margin-left: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-arrow {
+    fill: var(--location-text-color);
+}
+
+.transform {
+    transform: rotate(180deg);
+}
