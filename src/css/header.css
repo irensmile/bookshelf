@@ -1,6 +1,6 @@
 .header {
     border-radius: 0px 0px 8px 8px;
-    border: 1.5px solid var(--primari-color);
+    border: 1.5px solid #111;
     padding: 18px 0;
     position: relative;
     z-index: 200;
@@ -14,7 +14,7 @@
     align-items: center;
   }
   .menu-link.mobile {
-    color: var(--secondary-color);
+    color: #fff;
     padding: 0;
   }
   .mobile-basket-icon {
@@ -95,7 +95,7 @@
     transform: translateX(20px);
   }
   
-  .avatar-button {
+ /* .avatar-button {
     background-color: #4f2ee8;
     border: 1.5px solid #111;
     border-radius: 36px;
@@ -152,10 +152,10 @@
   }
   .avatar-box-img {
     margin-right: 9px;
-  }
+  } */
   
   .hamburger {
-    fill: var(--primari-color);
+    fill: #111;
   }
   .avatar-title,
   .sign-up-title {
@@ -197,7 +197,7 @@
     display: none;
   }
   .box-mob-menu {
-    background: url('../images/books.png'),
+    background: url('../images/group-mobile.png'),
       radial-gradient(
         189.32% 190.93% at 59.76% -23.42%,
         #4f2ee8 18.03%,
@@ -225,4 +225,37 @@
     }
     .avatar-button {
       display: block;
-    }};
+    }
+    .menu {
+      display: flex;
+      gap: 16px;
+    }
+    .mob-menu {
+      display: none;
+    }
+    .header {
+      padding: 0;
+    }
+    .box-mob-menu.active {
+      display: none;
+    }
+   
+  }
+  @media screen and (min-width: 1280px) {
+    .left-col {
+      gap: 76px;
+    }
+    .menu {
+      gap: 24px;
+    }
+  }
+  .menu-link:hover,
+  .menu-link:focus {
+    border-radius: 36px;
+    background: #eac645;
+  }
+  .arrow-right {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+  }
