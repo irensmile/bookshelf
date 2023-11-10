@@ -1,11 +1,17 @@
 
 @import url('./reset.css');
 @import url('./header.css');
+@import url('./category.css');
+@import url('./menu.css');
+@import url('./books.css');
+@import url('./popup.css');
+@import url('./scroll-up.css');
 
 body {
   font-family: 'DM Sans', sans-serif;
   font-family: 'Montserrat', sans-serif;
   font-family: 'Seymour One', sans-serif;
+  background-color: var(--background-body-color);
 }
 
 :root {
@@ -14,5 +20,6 @@ body {
   --location-text-color: #4F2EE8;
   --accent-color: #EAC645;
   --background-color: #D0D0D0;
+  --background-body-color: #F6F6F6;
 }
 
