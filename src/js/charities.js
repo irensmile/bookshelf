@@ -46,13 +46,15 @@ function onScrollBtnClick() {
             top: currentItemIdx * itemHeight,
             behavior: 'smooth',
         });
-        refs.icon.classList.remove('transform');
+      refs.icon.classList.remove('transform');
+      refs.btn.classList.remove('active-btn');
     } else {
         refs.list.scrollTo({
             top: currentItemIdx * itemHeight,
             behavior: 'smooth',
         });
-        refs.icon.classList.add('transform');
+      refs.icon.classList.add('transform');
+      refs.btn.classList.add('active-btn');
     }
 }
 
