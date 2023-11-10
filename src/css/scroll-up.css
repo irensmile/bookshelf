@@ -11,14 +11,9 @@
   height: 54px;
   padding: 0;
 
-  /* font-family: 'Montserrat', sans-serif;
-  font-size: 20px;
-  color: var(--secondary-color); */
   background-color: rgba(79, 46, 232, 0.3);
-
   border: none;
   border-radius: 50%;
-  /* box-shadow: 2px 1px 3px 0px rgba(0, 0, 0, 0.3); */
 
   transition: background-color 350ms ease-in-out, scale 350ms ease-in-out;
 }
@@ -28,8 +23,6 @@
   position: absolute;
   width: 64px;
   height: 64px;
-  /* top: -19px;
-  left: -12px; */
   background-color: rgba(79, 46, 232, 0.3);
   border-radius: 50%;
   z-index: -1;
@@ -61,7 +54,3 @@
   background-color: var(--same-blue);
   scale: 1.05;
 }
-
-/* .scroll-up-btn .arrow {
-  fill: var(--secondary-color);
-} */
