@@ -11,7 +11,7 @@ function fetchCategories() {
     });
 }
 
-function foo() {
+function getCategory() {
     fetchCategories()
         .then(categories => {
             markupCateg(categories)
@@ -29,4 +29,4 @@ function markupCateg(categories) {
     list.insertAdjacentHTML('beforeend', markup)
 }
 
-foo()
+getCategory()
