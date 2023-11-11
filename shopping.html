@@ -18,8 +18,8 @@
     />
     
     <script type="module" crossorigin src="/project-ScriptMasters14/commonHelpers2.js"></script>
-    <link rel="modulepreload" crossorigin href="/project-ScriptMasters14/assets/header-89b59c6d.js">
-    <link rel="stylesheet" href="/project-ScriptMasters14/assets/shopping-b4880b2b.css">
+    <link rel="modulepreload" crossorigin href="/project-ScriptMasters14/assets/popup-d2375c9e.js">
+    <link rel="stylesheet" href="/project-ScriptMasters14/assets/shopping-c87ad0d6.css">
   </head>
   <body>
 
@@ -29,19 +29,23 @@
     <div class="left-col">
       <a href="./index.html" class="logo" aria-label="Logo link on page">
         <svg width="109" height="28" aria-label="Page Logo">
-          <use href="/project-ScriptMasters14/assets/icons-fcf7ec60.svg#icon-logo"></use>
+          <use href="/project-ScriptMasters14/assets/icons-40b14637.svg#icon-logo"></use>
         </svg>
       </a>
-    
+
       <ul class="menu">
         <li class="menu-item home">
           <a href="./index.html" class="menu-link" aria-label="Home">Home</a>
         </li>
         <li class="menu-item">
-          <a href="./shopping.html" class="menu-link" aria-label="Shopping list">
-            Shopping
+          <a
+            href="./shopping.html"
+            class="menu-link"
+            aria-label="Shopping list"
+          >
+            Shopping list
             <svg width="20" height="20" aria-label="Basket icon">
-              <use href="/project-ScriptMasters14/assets/icons-fcf7ec60.svg#icon-basket"></use>
+              <use href="/project-ScriptMasters14/assets/icons-40b14637.svg#icon-basket"></use>
             </svg>
           </a>
         </li>
@@ -50,11 +54,11 @@
     <div class="right-col">
       <div class="box-toggle">
         <div class="circle">
-          <img src="./images/icon-toggle.svg" alt="toggle" />
+          <img class="white-circle" src="/project-ScriptMasters14/assets/icons-40b14637.svg#icon-toggle" alt="toggle" />
         </div>
       </div>
-      
-      <button
+
+     <!-- <button
         type="button"
         class="avatar-button btn-main-signup"
         id="sign-in-button-main"
@@ -68,10 +72,10 @@
             class="icon"
             aria-label="Sign in button icon"
           >
-            <use href="/project-ScriptMasters14/assets/icons-fcf7ec60.svg#icon-arrow-right"></use>
+            <use href="./images/icons.svg#icon-arrow-right"></use>
           </svg>
         </span>
-      </button>
+      </button>-->
       <button
         type="button"
         class="mob-menu"
@@ -84,7 +88,7 @@
           class="hamburger"
           aria-label="Mobile menu icon open"
         >
-          <use href="/project-ScriptMasters14/assets/icons-fcf7ec60.svg#icon-burger"></use>
+          <use href="/project-ScriptMasters14/assets/icons-40b14637.svg#icon-burger"></use>
         </svg>
         <svg
           width="26"
@@ -92,13 +96,56 @@
           class="close"
           aria-label="Mobile menu icon close"
         >
-          <use href="/project-ScriptMasters14/assets/icons-fcf7ec60.svg#icon-close"></use>
+          <use href="/project-ScriptMasters14/assets/icons-40b14637.svg#icon-close"></use>
         </svg>
       </button>
     </div>
   </div>
+  <div class="box-mob-menu">
+   <!--npm <button
+      type="button"
+      class="mob-avatar"
+      id="sign-in-button"
+      aria-label="Sign in button"
+    >
+      <span class="box-sign-up">
+        Sign up
+        <svg width="23" height="26" class="icon" aria-label="Sign in button icon">
+          <use href="./images/icons.svg#icon-arrow-right"></use>
+        </svg>
+      </span>
+    </button>-->
+  
+    <ul class="mobile-menu-navigation">
+      <li class="mobile-menu-nav-item">
+        <a
+          href="./index.html"
+          class="menu-link mobile"
+          id="bestsellers"
+          aria-label="Home"
+          >Home
+        </a>
+      </li>
+      <li class="mobile-menu-nav-item">
+        <a
+          href="./shopping.html"
+          class="menu-link mobile"
+          id="shop-page"
+          aria-label="Shopping list"
+          >Shopping list</a
+        >
+        <svg
+          class="mobile-basket-icon"
+          width="20"
+          height="20"
+          aria-label="Basket icon"
+        >
+          <use href="/project-ScriptMasters14/assets/icons-40b14637.svg#icon-mobile-basket"></use>
+        </svg>
+      </li>
+    </ul>
+  </div>
 </header>
-
 
       <ul>
         <li> <a href="./index.html">Home</a></li>
@@ -107,11 +154,18 @@
 
     </header>
     <main>
-            <ul class="js-list"></ul>
+      <ul class="js-list"></ul>
 
-            <h1 class="title js-title">
-              <span class="title-part">Shooping </span>list</h1>
-            <h2 class="js-quantity">quantity</h2>
+      <div class="container">
+        <h1 class="title js-title">
+          <span class="title-part">Shooping </span>list</h1>
+        <!-- <h2 class="js-quantity">quantity vishidden</h2> -->
+        <picture class="js-books">
+          <source srcset="./images/books1-x-tablet.jpg 1x, ../images/books2-x-tablet.jpg 2x" media="(min-width: 768px)">
+          <img src="/project-ScriptMasters14/assets/books1-x-tablet-daafd4eb.jpg" alt="фото книг" width="322">
+          </picture>
+      </div>
+
 
     </main>
 

@@ -1,4 +1,4 @@
-import"./assets/header-89b59c6d.js";const t={container:document.querySelector(".js-list"),totalQuantity:document.querySelector(".js-quantity"),clearBtn:document.querySelector(".js-close"),pageName:document.querySelector(".js-title")},c="shoppinglist",e=JSON.parse(localStorage.getItem(c))??[];t.container.insertAdjacentHTML("afterbegin",s(e));console.log(e);function s(n){return n.map(({img:a,titlle:o,category:r,desc:l,author:i})=>`
+import"./assets/popup-d2375c9e.js";const t={container:document.querySelector(".js-list"),totalQuantity:document.querySelector(".js-quantity"),clearBtn:document.querySelector(".js-close"),pageName:document.querySelector(".js-title")},c="shoppinglist",e=JSON.parse(localStorage.getItem(c))??[];t.container.insertAdjacentHTML("afterbegin",s(e));console.log(e);function s(n){return n.map(({img:a,titlle:o,category:r,desc:l,author:i})=>`
 <li class='card-item' class='book-img'>
   <img src='${a}' alt ='${o}'>
   <h2>${o}</h2>

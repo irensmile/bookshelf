@@ -12,15 +12,22 @@
       rel="stylesheet"
     />
     <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/2.0.0/modern-normalize.min.css"
+      integrity="sha512-4xo8blKMVCiXpTaLzQSLSw3KFOVPWhm/TRtuPVc4WG6kUgjH6J03IBuG7JZPkcWMxJ5huwaBpOpnwYElP/m6wg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
       rel="icon"
       type="image/svg"
       href="/project-ScriptMasters14/assets/bookshelf_icon_155732-a38de9b6.svg"
     />
     
     <script type="module" crossorigin src="/project-ScriptMasters14/commonHelpers.js"></script>
-    <link rel="modulepreload" crossorigin href="/project-ScriptMasters14/assets/header-89b59c6d.js">
+    <link rel="modulepreload" crossorigin href="/project-ScriptMasters14/assets/popup-d2375c9e.js">
     <link rel="modulepreload" crossorigin href="/project-ScriptMasters14/assets/vendor-77e6b4aa.js">
-    <link rel="stylesheet" href="/project-ScriptMasters14/assets/index-125a77d6.css">
+    <link rel="stylesheet" href="/project-ScriptMasters14/assets/index-e22d203a.css">
   </head>
   <body>
     <header>
@@ -29,19 +36,23 @@
     <div class="left-col">
       <a href="./index.html" class="logo" aria-label="Logo link on page">
         <svg width="109" height="28" aria-label="Page Logo">
-          <use href="/project-ScriptMasters14/assets/icons-fcf7ec60.svg#icon-logo"></use>
+          <use href="/project-ScriptMasters14/assets/icons-40b14637.svg#icon-logo"></use>
         </svg>
       </a>
-    
+
       <ul class="menu">
         <li class="menu-item home">
           <a href="./index.html" class="menu-link" aria-label="Home">Home</a>
         </li>
         <li class="menu-item">
-          <a href="./shopping.html" class="menu-link" aria-label="Shopping list">
-            Shopping
+          <a
+            href="./shopping.html"
+            class="menu-link"
+            aria-label="Shopping list"
+          >
+            Shopping list
             <svg width="20" height="20" aria-label="Basket icon">
-              <use href="/project-ScriptMasters14/assets/icons-fcf7ec60.svg#icon-basket"></use>
+              <use href="/project-ScriptMasters14/assets/icons-40b14637.svg#icon-basket"></use>
             </svg>
           </a>
         </li>
@@ -50,11 +61,11 @@
     <div class="right-col">
       <div class="box-toggle">
         <div class="circle">
-          <img src="./images/icon-toggle.svg" alt="toggle" />
+          <img class="white-circle" src="/project-ScriptMasters14/assets/icons-40b14637.svg#icon-toggle" alt="toggle" />
         </div>
       </div>
-      
-      <button
+
+     <!-- <button
         type="button"
         class="avatar-button btn-main-signup"
         id="sign-in-button-main"
@@ -68,10 +79,10 @@
             class="icon"
             aria-label="Sign in button icon"
           >
-            <use href="/project-ScriptMasters14/assets/icons-fcf7ec60.svg#icon-arrow-right"></use>
+            <use href="./images/icons.svg#icon-arrow-right"></use>
           </svg>
         </span>
-      </button>
+      </button>-->
       <button
         type="button"
         class="mob-menu"
@@ -84,7 +95,7 @@
           class="hamburger"
           aria-label="Mobile menu icon open"
         >
-          <use href="/project-ScriptMasters14/assets/icons-fcf7ec60.svg#icon-burger"></use>
+          <use href="/project-ScriptMasters14/assets/icons-40b14637.svg#icon-burger"></use>
         </svg>
         <svg
           width="26"
@@ -92,30 +103,93 @@
           class="close"
           aria-label="Mobile menu icon close"
         >
-          <use href="/project-ScriptMasters14/assets/icons-fcf7ec60.svg#icon-close"></use>
+          <use href="/project-ScriptMasters14/assets/icons-40b14637.svg#icon-close"></use>
         </svg>
       </button>
     </div>
   </div>
+  <div class="box-mob-menu">
+   <!--npm <button
+      type="button"
+      class="mob-avatar"
+      id="sign-in-button"
+      aria-label="Sign in button"
+    >
+      <span class="box-sign-up">
+        Sign up
+        <svg width="23" height="26" class="icon" aria-label="Sign in button icon">
+          <use href="./images/icons.svg#icon-arrow-right"></use>
+        </svg>
+      </span>
+    </button>-->
+  
+    <ul class="mobile-menu-navigation">
+      <li class="mobile-menu-nav-item">
+        <a
+          href="./index.html"
+          class="menu-link mobile"
+          id="bestsellers"
+          aria-label="Home"
+          >Home
+        </a>
+      </li>
+      <li class="mobile-menu-nav-item">
+        <a
+          href="./shopping.html"
+          class="menu-link mobile"
+          id="shop-page"
+          aria-label="Shopping list"
+          >Shopping list</a
+        >
+        <svg
+          class="mobile-basket-icon"
+          width="20"
+          height="20"
+          aria-label="Basket icon"
+        >
+          <use href="/project-ScriptMasters14/assets/icons-40b14637.svg#icon-mobile-basket"></use>
+        </svg>
+      </li>
+    </ul>
+  </div>
 </header>
 
-
       <ul>
-        <li> <a href="./shopping.html">Shopping list</a></li>
+        <li><a href="./shopping.html">Shopping list</a></li>
       </ul>
-
     </header>
     <main>
       <section class="categ-funds">
-  <ul class="categories-list">
-    <li class="categ-item">All categories</li>
-  </ul>
+  <div class="categ-funds-container">
+    <div class="categories">
+      <ul class="categories-list">
+        <li class="categ-item is-active-item">All categories</li>
+      </ul>
+    </div>
+    <div class="funds">
+      <div class="support">
+        <h3 class="sup-title">Support Ukraine</h3>
+        <svg class="trident-icon" width="20" height="32">
+          <use href="/project-ScriptMasters14/assets/icons-40b14637.svg#icon-trident"></use>
+        </svg>
+      </div>
+      <div class="organizations">
+        <ul class="org-list">
+      </div>
+      <button class="btn-up">
+        <svg class="icon-arrow" width="20" height="20">
+          <use href="/project-ScriptMasters14/assets/icons-40b14637.svg#icon-arrow-down"></use>
+        </svg>
+      </button>
+    </div>
+  </div>
 </section>
 
+      
     </main>
     <button class="scroll-up-btn hide" type="button">
-  <svg class="arrow" width="50" height="50">
-    <use href="/project-ScriptMasters14/assets/icons-fcf7ec60.svg#icon-arrow-top"></use>
+  <svg class="arrow" width="24" height="24">
+    <use href="/project-ScriptMasters14/assets/icons-40b14637.svg#icon-arrow-top"></use>
   </svg>
 </button>
 
