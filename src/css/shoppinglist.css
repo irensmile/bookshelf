@@ -21,17 +21,16 @@
 } */
 .card-item {
   display: flex;
+  position: relative;
 
   width: 335px;
   min-height: 170px;
-  background: #fcfcfc;
   margin-bottom: 20px;
   padding: 14px;
-  position: relative;
-  margin-bottom: 50px;
-  border-radius: 16px;
-  border: 2px solid var(--location-text-color);
 
+  border-radius: 16px;
+  border: 2px solid #4F2EE8;
+  background: #fcfcfc;
 }
 
 .info {
@@ -46,6 +45,7 @@ flex-wrap: wrap;
   font-weight: 700;
   font-size: 16px;
   line-height: 1.12;
+
   color: var(--primary-color);
 }
 
@@ -61,14 +61,28 @@ flex-wrap: wrap;
 
 .desc {
   margin-bottom:  16px;
+  /* white-space: nowrap; */
+  overflow: hidden;
 
   font-family: 'DM Sans';
   font-weight: 400;
   font-size: 14px;
   line-height: 1.28;
+
 color: var(--primary-color);
 }
 
+.ltr > p {
+  direction: ltr;
+}
+
+.overflow-ellipsis {
+  text-overflow: ellipsis;
+}
+
+.overflow-string {
+  text-overflow: " [..]";
+}
 .shopping_author{
   font-family: 'Italic';
   font-size: 12px;
@@ -87,6 +101,12 @@ color: var(--primary-color);
 }
 
 .title {
+
+margin-top: 40px;
+margin-bottom: 40px;
+margin-left: 20px;
+margin-right: 162px;
+
 color:#4F2EE8;
 }
 
