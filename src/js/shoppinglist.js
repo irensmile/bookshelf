@@ -869,9 +869,13 @@ function createMarkup(arr) {
   <h2 class='shopping_title'>${title}</h2>
   <p class='list_name'>${list_name}</p>
   <h3 class='desc overflow-ellipsis'>${description}</h3>
-  <p class= 'shopping_author>${author}'</p>
+  <p class= 'shopping_author>'${author}'</p>
   </div>
-  <button type="button" class="js-close">Close</button>
+  <button type="button" class="js-close btn-delete">
+  <svg class="icon-delete" width="28" height="28">
+  <use href="./images/icons.svg#icon-mobile-basket"></use>
+  </svg>
+  </button>
    <ul class="socials_list">
    <li>
      <a
@@ -882,7 +886,7 @@ function createMarkup(arr) {
        aria-label="Amazon icon"
      >
        <svg class="" width="32" height="11">
-         <use href="./images/icons.svg#amazon"></use>
+         <use href="./images/icons.svg#icon-logo"></use>
        </svg>
      </a>
    </li>
