@@ -15,8 +15,8 @@ function markupItems() {
   sup_org.forEach(item => {
     const listItem = `
       <li>
-        <a  
-        href="${item.url}" 
+        <a
+        href="${item.url}"
         target="_blank"
         class="org-item"
         >

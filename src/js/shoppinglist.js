@@ -1,3 +1,7 @@
+// import SimpleLightbox from "simplelightbox";
+// import "simplelightbox/dist/simple-lightbox.min.css";
+
+
 const bookslist =
   [
     {
@@ -864,38 +868,38 @@ function createMarkup(arr) {
   <div class="info">
   <h2 class='shopping_title'>${title}</h2>
   <p class='list_name'>${list_name}</p>
-  <h3 class='desc'>${description}</h3>
-  <p class= 'shopping_author>${author}</p>
+  <h3 class='desc overflow-ellipsis'>${description}</h3>
+  <p class= 'shopping_author>${author}'</p>
   </div>
   <button type="button" class="js-close">Close</button>
-  <ul class="socials_list">
-  <li>
-    <a
-      class="social-icon"
-      href="https://www.amazon.com/"
-      target="_blank"
-      rel="nofollow noopener noreferrer"
-      aria-label="Amazon icon"
-    >
-      <svg class="" width="32" height="11">
-        <use href="./images/icons.svg#amazon"></use>
-      </svg>
-    </a>
-  </li>
-  <li>
-    <a
-      class="social-icon"
-      href=""
-      target="_blank"
-      rel="nofollow noopener noreferree"
-      aria-label="Book icon"
-    >
-      <svg class="" width="16" height="16">
-        <use href="./images/icons.svg#library"></use>
-      </svg>
-    </a>
-  </li>
-
+   <ul class="socials_list">
+   <li>
+     <a
+       class="social-icon"
+       href="https://www.amazon.com/"
+       target="_blank"
+       rel="nofollow noopener noreferrer"
+       aria-label="Amazon icon"
+     >
+       <svg class="" width="32" height="11">
+         <use href="./images/icons.svg#amazon"></use>
+       </svg>
+     </a>
+   </li>
+   <li>
+     <a
+       class="social-icon"
+       href=""
+       target="_blank"
+     rel="nofollow noopener noreferree"
+       aria-label="Book icon"
+     >
+       <svg class="" width="16" height="16">
+         <use href="./images/icons.svg#library"></use>
+       </svg>
+     </a>
+ </li>
+<ul/>
 </li>`).join('');
 
 }
@@ -903,12 +907,12 @@ function createMarkup(arr) {
 elements.container.insertAdjacentHTML("afterbegin", createMarkup(bookslist));
 
 if (books.length){
-  const quantity = books.reduce((acc, {qty}) => acc + qty, 0);
-  elements.totalQuantity.textContent = quantity;
+  // const quantity = books.reduce((acc, {qty}) => acc + qty, 0);
+  // elements.totalQuantity.textContent = quantity;
   elements.container.insertAdjacentHTML('afterbegin', createMarkup(books));
   elements.clearBtn.addEventListener(click, handlerClearBasket)
   } else {
-    // elements.totalQuantity.textContent = 'This page is empty, add some books and proceed to order.'
+    elements.totalQuantity.textContent = 'This page is empty, add some books and proceed to order.'
   }
 
 
@@ -916,4 +920,14 @@ if (books.length){
     localStorage.removeItem(BOOKS_KEY);
   }
 
-  createMarkup(bookslist);
+  console.log(createMarkup(bookslist))
+  ;
+
+
+  const lightbox = new SimpleLightbox('.gallery a', {
+    captionsData: 'alt',
+    captionDelay: 250,
+    close: false,
+    enableKeyboard: true,
+    captionPosition: 'bottom',
+});
