@@ -1,8 +1,6 @@
 @import '../../node_modules/modern-normalize/modern-normalize.css';
 @import url('./reset.css');
-@import url('./styles.css');
 @import url('./header.css');
 @import url('./menu.css');
-@import url('./charities.css');
 @import url('./shoppinglist.css');
 @import url('./popup.css');
