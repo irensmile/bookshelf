@@ -15,6 +15,15 @@
     font-family: 'DM Sans', sans-serif;
 }
 
+.books-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    align-content: center;
+    gap: 20px;
+}
+
 .categ-name {
     color: var(--light-gray-text);
 

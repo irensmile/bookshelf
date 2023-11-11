@@ -12,18 +12,9 @@ const list = document.querySelector('.books')
 function fetchBooks(data) {
 
     const markup = data.map((res) => {
-        console.log('->', res);
         return `<div>${res.list_name}</div>
-                <ul>
+                <ul class="books-container">
                     ${booksMarkup(res.books)}
-                </ul>`
-        return `<ul class='category_books'></ul>`
-        return `<ul class="books-list"> 
-                <li> 
-                    <img src="${res.book_image}" class="book-pic" />
-                    <p class="book-name">${res.title}</p>
-                    <p class="book-author">${res.author}</p>
-                </li>
                 </ul>`
       });
       list.insertAdjacentHTML('beforeend', markup)
@@ -33,7 +24,7 @@ function fetchBooks(data) {
 function booksMarkup(books) {
     return books.map((book) => {
         return `<li>
-            <img src="${book.book_image}" class="book-pic" />
+            <img src="${book.book_image}" class="book-pic" width=120 heigh=240 />
             <p class="book-name">${book.title}</p>
             <p class="book-author">${book.author}</p>
         </li>`
