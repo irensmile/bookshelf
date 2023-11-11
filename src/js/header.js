@@ -1,3 +1,20 @@
+const homeBtn = document.getElementById('bestsellers');
+const shopPage = document.getElementById('shop-page');
+
+if (document.querySelector('.shopping-list-section')) {
+  homeBtn.classList.remove('active');
+  shopPage.classList.add('active');
+} else {
+  homeBtn.classList.add('active');
+  shopPage.classList.remove('active');
+}
+const refs = {
+  bookList: document.querySelector('.book-list'),
+  home: document.getElementById('bestsellers'),
+  body: document.querySelector('body'),
+
+};
+
 //burger-js
 const ToggleEl = document.querySelector('.box-toggle');
 const mobMenuEl = document.querySelector('.mob-menu');
@@ -20,5 +37,3 @@ function onClickMobMenu(event) {
     body.style.overflow = 'auto';
   }
 }
-
-// document.querySelector('#bestsellers').classList.add('active');

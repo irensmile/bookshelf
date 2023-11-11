@@ -6,14 +6,18 @@
           <use href="./images/icons.svg#icon-logo"></use>
         </svg>
       </a>
-    
+
       <ul class="menu">
         <li class="menu-item home">
           <a href="./index.html" class="menu-link" aria-label="Home">Home</a>
         </li>
         <li class="menu-item">
-          <a href="./shopping.html" class="menu-link" aria-label="Shopping list">
-            Shopping
+          <a
+            href="./shopping.html"
+            class="menu-link"
+            aria-label="Shopping list"
+          >
+            Shopping list
             <svg width="20" height="20" aria-label="Basket icon">
               <use href="./images/icons.svg#icon-basket"></use>
             </svg>
@@ -24,11 +28,11 @@
     <div class="right-col">
       <div class="box-toggle">
         <div class="circle">
-          <img src="./images/icon-toggle.svg" alt="toggle" />
+          <img class="white-circle" src="./images/icons.svg#icon-toggle" alt="toggle" />
         </div>
       </div>
-      
-      <button
+
+     <!-- <button
         type="button"
         class="avatar-button btn-main-signup"
         id="sign-in-button-main"
@@ -45,7 +49,7 @@
             <use href="./images/icons.svg#icon-arrow-right"></use>
           </svg>
         </span>
-      </button>
+      </button>-->
       <button
         type="button"
         class="mob-menu"
@@ -71,5 +75,48 @@
       </button>
     </div>
   </div>
+  <div class="box-mob-menu">
+   <!--npm <button
+      type="button"
+      class="mob-avatar"
+      id="sign-in-button"
+      aria-label="Sign in button"
+    >
+      <span class="box-sign-up">
+        Sign up
+        <svg width="23" height="26" class="icon" aria-label="Sign in button icon">
+          <use href="./images/icons.svg#icon-arrow-right"></use>
+        </svg>
+      </span>
+    </button>-->
+  
+    <ul class="mobile-menu-navigation">
+      <li class="mobile-menu-nav-item">
+        <a
+          href="./index.html"
+          class="menu-link mobile"
+          id="bestsellers"
+          aria-label="Home"
+          >Home
+        </a>
+      </li>
+      <li class="mobile-menu-nav-item">
+        <a
+          href="./shopping.html"
+          class="menu-link mobile"
+          id="shop-page"
+          aria-label="Shopping list"
+          >Shopping list</a
+        >
+        <svg
+          class="mobile-basket-icon"
+          width="20"
+          height="20"
+          aria-label="Basket icon"
+        >
+          <use href="./images/icons.svg#icon-mobile-basket"></use>
+        </svg>
+      </li>
+    </ul>
+  </div>
 </header>
-
