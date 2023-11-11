@@ -91,7 +91,6 @@ color: var(--primary-color);
 }
 
 .title {
-
 margin-top: 40px;
 margin-bottom: 40px;
 margin-left: 20px;
@@ -114,6 +113,7 @@ color: #4F2EE8;
   align-items: center;
   justify-content: center;
   padding: 6px;
+  margin-left: 21px;
 
   cursor: pointer;
 }
