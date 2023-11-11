@@ -5,6 +5,7 @@
 @import url('./books.css');
 @import url('./popup.css');
 @import url('./scroll-up.css');
+@import url('./footer.css');
 
 body {
   font-family: 'DM Sans', sans-serif;
