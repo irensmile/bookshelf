@@ -1,3 +1,82 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;
+
+
+}
+
+.img {
+    width: 100px;
+    height: 142px;
+    object-fit: cover;
+}
+
+.info{
+  margin-left: 14px;
+}
+/* .list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+} */
+.card-item {
+  display: flex;
+
+  width: 335px;
+  min-height: 170px;
+  background: #fcfcfc;
+  margin-bottom: 20px;
+  padding: 14px;
+  position: relative;
+  margin-bottom: 50px;
+  border-radius: 16px;
+  border: 2px solid var(--location-text-color);
+
+}
+
+.info {
+display: flex;
+flex-wrap: wrap;
+}
+
+.shopping_title{
+  margin-bottom: 4px;
+
+  font-family: 'DM Sans';
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.12;
+  color: var(--primary-color);
+}
+
+.list_name {
+  margin-bottom: 8px;
+
+  font-family: 'DM Sans';
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.16;
+  color: #B4AFAF;
+}
+
+.desc {
+  margin-bottom:  16px;
+
+  font-family: 'DM Sans';
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.28;
+color: var(--primary-color);
+}
+
+.shopping_author{
+  font-family: 'Italic';
+  font-size: 12px;
+  line-height: 1.16;
+  color: #B4AFAF;
+
+}
+
 .title-part,
 .title {
   font-family: 'DM Sans';
@@ -10,3 +89,4 @@
 .title {
 color:#4F2EE8;
 }
+
