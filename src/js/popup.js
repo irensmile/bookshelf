@@ -7,24 +7,24 @@ const elements = {
   closeBtn: document.querySelector('.modal-btn-close'),
 };
 
-elements.startBtn.addEventListener('click', () => {
-  elements.modal.classList.add('visible-element');
+// elements.startBtn.addEventListener('click', () => {
+//   elements.modal.classList.add('visible-element');
 
-  // проверка для отрисовки кнопок если книга в корзине
-  changeTextBtn();
+//   // проверка для отрисовки кнопок если книга в корзине
+//   changeTextBtn();
 
-  document.addEventListener('keydown', escCloseModal);
-});
+//   document.addEventListener('keydown', escCloseModal);
+// });
 
-elements.modal.addEventListener('click', e => {
-  if (
-    e.target.classList.contains('cover-modal') ||
-    e.target.classList.contains('modal-btn-close')
-  ) {
-    elements.modal.classList.remove('visible-element');
-    document.removeEventListener('keydown', escCloseModal);
-  }
-});
+// elements.modal.addEventListener('click', e => {
+//   if (
+//     e.target.classList.contains('cover-modal') ||
+//     e.target.classList.contains('modal-btn-close')
+//   ) {
+//     elements.modal.classList.remove('visible-element');
+//     document.removeEventListener('keydown', escCloseModal);
+//   }
+// });
 
 function escCloseModal(e) {
   if (e.key === 'Escape') {
@@ -42,8 +42,8 @@ const removeBtn = document.querySelector('.remove');
 const openListBtn = document.querySelector('.open-list');
 const modalText = document.querySelector('.modal-add-text');
 
-addBtn.addEventListener('click', addBookToList);
-removeBtn.addEventListener('click', removeBookFromList);
+//addBtn.addEventListener('click', addBookToList);
+//removeBtn.addEventListener('click', removeBookFromList);
 
 // При нажатии на книгу(ссылку) по логике оно должно отправлять запрос для полной информации о книге и от этого отрисовывать модальное
 // окно. при нажатии кнопки добавить в єту функцию аргументом должен приходить обект которій и запишеться в localStorage.
