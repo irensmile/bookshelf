@@ -23,7 +23,28 @@
     align-content: center;
     gap: 20px;
 }
+.book-name{
+    font-family: DM Sans;
+    color: var(--primary-color);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 18px;
+    /* 112.5% */
+    letter-spacing: -0.64px;
+    text-transform: uppercase;
 
+}
+.book-author{
+    color: var(--light-gray-text);
+    font-family: DM Sans;
+    font-size: 12px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 14px;
+    /* 116.667% */
+    letter-spacing: -0.48px;
+}
 .categ-name {
     color: var(--light-gray-text);
 

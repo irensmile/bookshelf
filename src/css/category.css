@@ -57,7 +57,7 @@
     overflow-y: scroll;
     max-height: 228px;
     font-family: 'DM Sans', sans-serif;
-    color: rgba(17, 17, 17, 0.60);
+    color: var(--dark-color);
     line-height: 1.125;
     letter-spacing: -0.02em;
 }
