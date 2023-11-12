@@ -84,10 +84,21 @@ categoryItems.forEach(function(category) {
     })
 })*/
 const categoryList = document.querySelector('.categories-list');
+
+// Обробник кліку на категорії - завантажуємо книги для категорії і виділяємо акитивну категорію
 categoryList.addEventListener("click", async (e) => { 
     e.preventDefault();
-
+    
+    if (e.target == categoryList) {
+        // Натиснули на список, а не на елемент (між елементами), ігноруємо
+        return;
+    }
     const selectedCategory = e.target.innerHTML;
+    for (const child of e.currentTarget.children) {
+        console.log(child.classList.remove('is-active-item'));
+    }
+    e.target.classList.add('is-active-item');
+    
     populateCategoryHeader(selectedCategory);
        const data = await getBooksByCategory(selectedCategory);  
     const markup = singleCategoryMarkup(selectedCategory, data, true);
