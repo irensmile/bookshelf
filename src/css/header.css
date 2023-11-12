@@ -1,25 +1,27 @@
 .header {
     border-radius: 0px 0px 8px 8px;
-    border: 1.5px solid #111;
-    padding: 18px 0;
+    border: 1.5px solid var(--primary-color);
+    padding: 18px 20px;
     position: relative;
     z-index: 200;
   }
+  
   .header .container,
   .left-col {
     display: flex;
+    
   }
   .header .container {
     justify-content: space-between;
     align-items: center;
   }
   .menu-link.mobile {
-    color: #fff;
+    color: var(--same-white);
     padding: 0;
   }
   .mobile-basket-icon {
     margin-left: 4px;
-    stroke: #fff;
+    stroke: var(--same-white);
   }
   
   .mobile-menu-nav-item {
@@ -30,7 +32,7 @@
   }
   .mobile-menu-nav-item:hover,
   .mobile-menu-nav-item:focus {
-    background-color: #eac645;
+    background-color: var(--accent-color);
   }
   
   .mobile-menu-navigation {
@@ -57,7 +59,7 @@
   }
   
   .menu-link {
-    color: #111;
+    color: var(--primary-color);
     font-family: 'DM Sans', sans-serif;
     font-size: 14px;
     font-style: normal;
@@ -73,9 +75,11 @@
   .menu-link.active {
     padding: 8px 16px;
     border-radius: 36px;
-    background: #eac645;
+    background: var(--accent-color);
   }
-  
+
+  /****Toggle****/
+
   .box-toggle {
     cursor: pointer;
     width: 40px;
@@ -86,25 +90,25 @@
     box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.1) inset;
   }
   .white-circle {
-    fill: #fff;
+    fill: var(--same-white);
   }
   .circle {
     position: absolute;
-    
-    width: 18px;
-    left: -2px;
-    top: -1px;
+    top: 2px;
     transition: transform 0.3s;
   }
   .box-toggle.active .circle {
     transform: translateX(20px);
   }
-  
- /* .avatar-button {
-    background-color: #4f2ee8;
-    border: 1.5px solid #111;
+
+  /****Registration button*****/
+
+  .avatar-button {
+    background-color: var(--same-blue);
+    border: 1.5px solid var(--same-blue);
     border-radius: 36px;
-    color: #fff;
+    
+    color: var(--same-white);
     font-size: 14px;
     font-weight: 700;
     letter-spacing: -0.44px;
@@ -114,13 +118,14 @@
     align-items: center;
     padding: 14px;
     line-height: 1.28;
+    
   }
   
   .mob-avatar {
-    background-color: #4f2ee8;
-    border: 1.5px solid #111;
+    background-color: var(--same-blue);
+    border: 1.5px solid var(--same-blue);
     border-radius: 36px;
-    color: #fff;
+    color: var(--same-white);
     font-size: 14px;
     font-weight: 700;
     letter-spacing: -0.44px;
@@ -157,12 +162,7 @@
   }
   .avatar-box-img {
     margin-right: 9px;
-  } */
-  
-  .hamburger {
-    stroke: #111;
   }
-  
   .avatar-title,
   .sign-up-title {
     color: #fff;
@@ -177,9 +177,15 @@
   .sign-up-title {
     font-size: 14px;
     line-height: 1.28;
+  } 
+  
+  /****Button for mobMenu***/
+  .hamburger {
+    stroke: var(--primary-color);
+    
   }
   .icon {
-    fill: #fff;
+    fill: var(--same-white);
   }
   .mob-menu {
     border: none;
@@ -192,7 +198,7 @@
     display: none;
   }
   .close {
-    stroke: #111;
+    stroke: var(--primary-color);
   }
   .mob-menu svg {
     position: absolute;
@@ -218,7 +224,7 @@
     padding: 104px 20px 20px 20px;
     display: none;
     position: fixed;
-    top: 40px;
+    top: 66px;
     left: 0;
     padding: 40px 20px;
     width: 100vw;
@@ -229,6 +235,9 @@
     display: block;
   }
   @media screen and (min-width: 768px) {
+    .container-header {
+      padding: 14px 32px;
+    }
     .left-col {
       gap: 40px;
     }
@@ -260,8 +269,10 @@
   }
   .menu-link:hover,
   .menu-link:focus {
+    margin-top: 19px;
+    margin-bottom: 19px;
     border-radius: 36px;
-    background: #eac645;
+    background: var(--accent-color);
   }
   .arrow-right {
     position: absolute;
