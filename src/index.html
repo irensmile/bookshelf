@@ -22,15 +22,25 @@
   <body>
     <header>
       <load src="./partials/header.html" />
+      <load src="./partials/authorisation.html" />
       <ul>
         <li><a href="./shopping.html">Shopping list</a></li>
       </ul>
     </header>
     <main>
-      <load src="./partials/category.html" />
+      <section class="categ-funds">
+        <div class="categ-funds-container">
+          <load src="./partials/category.html" />
+          <load src="./partials/funds.html" />
+        </div>
+      </section>
       <load src="./partials/books.html" />
+      <load src="./partials/scroll-up.html" />
     </main>
-    <load src="./partials/scroll-up.html" />
+
+    <footer>
+      <load src="./partials/footer.html" />
+    </footer>
 
     <script type="module" src="/main.js"></script>
   </body>
