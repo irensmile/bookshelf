@@ -70,7 +70,7 @@
 body {
   font-family: 'DM Sans', sans-serif;
   font-family: 'Montserrat', sans-serif;
-  font-family: 'Seymour One', sans-serif;
+  /*font-family: 'Seymour One', sans-serif;*/
   background-color: var(--background-body-color);
 }
 
@@ -100,4 +100,13 @@ body {
   --light-gray: rgba(17, 17, 17, 0.6);
   --dark-color: rgba(255, 255, 255, 0.6);
   --light-gray-text: #b4afaf;
+}
+
+
+.main-page-structure{
+  display: flex;
+  gap: 30px;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
 }
