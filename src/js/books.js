@@ -44,16 +44,3 @@ function booksMarkup(books) {
     function newListBooks(data){
         console.log(data)
     }
-
-    list.addEventListener('click', function(event) {
-        // Перевіряємо, чи клік був на елементі з класом "books-btn"
-        if (event.target.classList.contains('books-btn')) {
-            // Отримуємо id кнопки (res.list_name) для подальшого використання в запиті
-            const id = event.target.id;
-    
-            // Виклик Axios з отриманим id
-            axios.get(`https://books-backend.p.goit.global/books/category?category=${id}`)
-                .then(response => newListBooks(response.data))
-                .catch(error => console.error(error));
-        }
-    });
