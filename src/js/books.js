@@ -9,11 +9,6 @@ axios.get('/books/top-books')
 
 
 
-axios.get(`https://books-backend.p.goit.global/books/category?category=selectedCategory`)
-    .then(response => newListBooks(response.data))
-    .catch(error => console.error(error));
-
-
 const list = document.querySelector('.books')
 
 function fetchBooks(data) {
@@ -23,9 +18,9 @@ function fetchBooks(data) {
                 <ul class="books-container">
                     ${booksMarkup(res.books)}
                 </ul>
-                <a href="https://books-backend.p.goit.global/books/category?category=selectedCategory>"
+                
                 <button class = "books-btn" type = "button" id = "${res.list_name}"> SEE MORE </button>
-                </a>`
+                `
       });
       list.insertAdjacentHTML('beforeend', markup)
       console.log(list)
@@ -41,6 +36,54 @@ function booksMarkup(books) {
     }).join('');
 }
 
-    function newListBooks(data){
-        console.log(data)
-    }
+const httpRequest = new XMLHttpRequest();
+
+function newList() {
+    
+    
+    return `<div class = "books-list-name" ></div>
+    <ul class="books-container">
+    </ul>`
+}
+
+httpRequest.onreadystatechange = newList;
+httpRequest.open("GET", "https://books-backend.p.goit.global/books/category?category=selectedCategory", true);
+httpRequest.setRequestHeader(
+    "Content-Type",
+    "application/json",
+  );
+httpRequest.send();
+
+const categoryItems = document.querySelectorAll('.categ-item');
+categoryItems.forEach(function(category) {
+    category.addEventListener("click", function() {
+        const selectedCategory = categoryItems.value;
+        const url = "https://books-backend.p.goit.global/books/category?category=" + selectedCategory;
+        axios.get(url)
+            .then(response => {
+                console.log(response.data);
+            })
+            .catch(error => console.error(error));
+
+    })
+})
+
+
+
+
+
+const buttonsForCateg = document.querySelectorAll(".books-btn");
+
+buttonsForCateg.forEach(function(button) {
+    button.addEventListener("click", function() {
+        const showList = categoryItems.map(url)
+    list.insertAdjacentHTML("beforeend", showList)
+    console.log(list)
+    });
+});
+
+// categoryItems.addEventListener("click", function() { 
+//     const selectedCategory = categoryItems.value;
+//     const url = "https://books-backend.p.goit.global/books/category?category=" + selectedCategory;
+//     axios.get(url)
+//         .then(response) })

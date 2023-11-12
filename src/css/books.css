@@ -1,5 +1,5 @@
 .purple-text {
-    color: var(--same-blue);
+    color: var(--location-text-color);
 
     font-family: 'DM Sans';
     font-size: 48px;
@@ -42,7 +42,7 @@
 
 .books-btn {
     display: flex;
-    color: var(--primary-color);
+    color: var(--dark-color);
 
     font-family: 'DM Sans';
     font-size: 14px;
@@ -51,7 +51,7 @@
     line-height: 18px;
     letter-spacing: -0.14px;
     text-transform: uppercase;
-    background-color: #fff;
+    background-color:var(--secondary-color);
     padding-left: 28px;
     padding-right: 28px;
     padding-top: 14px;
@@ -73,8 +73,8 @@
 }
 
 .books-btn:hover {
-    background-color: #4F2EE8;
-    color: #FFFFFF;
+    background-color: var(--location-text-color);
+    color: var(--same-white);
 }
 
 .book-pic {
@@ -88,7 +88,7 @@
 
 
 .book-name {
-    color: #111;
+    color: var(--primary-color);
 
     font-family: DM Sans;
     font-size: 16px;
@@ -106,7 +106,7 @@
 
 
 .book-author {
-    color: #B4AFAF;
+    color: var(--light-gray-text);
 
     font-family: DM Sans;
     font-size: 12px;
