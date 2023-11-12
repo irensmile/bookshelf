@@ -19,9 +19,9 @@
     />
     
     <script type="module" crossorigin src="/project-ScriptMasters14/commonHelpers.js"></script>
-    <link rel="modulepreload" crossorigin href="/project-ScriptMasters14/assets/scroll-up-e061b8b6.js">
+    <link rel="modulepreload" crossorigin href="/project-ScriptMasters14/assets/scroll-up-760bcafc.js">
     <link rel="modulepreload" crossorigin href="/project-ScriptMasters14/assets/vendor-77e6b4aa.js">
-    <link rel="stylesheet" href="/project-ScriptMasters14/assets/index-32b62a21.css">
+    <link rel="stylesheet" href="/project-ScriptMasters14/assets/index-79a82ace.css">
   </head>
   <body>
     <header>
@@ -59,6 +59,7 @@
         </div>
       </div>
 
+
      <!--    Registration button  -->
 
      <button
@@ -74,6 +75,8 @@
             height="26"
             class="icon"
             aria-label="Sign in button icon"
+              onclick="document.getElementById('sign-in-button-main').click()"
+
           >
             <use href="/project-ScriptMasters14/assets/icons-b22338a1.svg#icon-arrow-right"></use>
           </svg>
@@ -155,6 +158,39 @@
   </div>
 </header>
 
+      <div class="modal" id="authModal">
+    <div class="modal-content">
+      <div class="auth-form">
+        <div class="auth-form-close"> 
+          <span>&times;</span>
+        </div>
+        <form id="signup-form">  
+          <div class="input-icon">
+            <input type="text" id="name" name="name" placeholder="Name">
+          </div>
+          
+          <div class="input-icon">
+            <input type="email" id="email" name="email" placeholder="Email">
+          </div>
+          
+          <div class="input-icon">
+            <input type="password" id="password" name="password" placeholder="Password">
+          </div>
+      
+          <button type="submit">Sign up</button>
+      
+          <div class="auth-form-options">
+            <span><a href="#" id="signin-link">Sign In</a></span>
+            <span><a href="#" id="signup-link">Sign Up</a></span>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+    
+      <ul>
+        <li><a href="./shopping.html">Shopping list</a></li>
+      </ul>
     </header>
     <main>
       <section class="categ-funds">
