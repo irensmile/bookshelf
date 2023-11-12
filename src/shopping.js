@@ -4,3 +4,4 @@ import './js/charities.js';
 import './js/shoppinglist.js';
 import './js/footer.js';
 import './js/popup.js';
+import './js/scroll-up.js';
