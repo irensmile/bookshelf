@@ -99,9 +99,17 @@ categoryList.addEventListener("click", async (e) => {
     }
     e.target.classList.add('is-active-item');
     
-    populateCategoryHeader(selectedCategory);
-       const data = await getBooksByCategory(selectedCategory);  
-    const markup = singleCategoryMarkup(selectedCategory, data, true);
+    let markup = null
+    if (selectedCategory == "All categories") {
+        populateCategoryHeader('Best Sellers Books');
+        const data = await getTopBooks(); 
+        markup = categoriesMarkup(selectedCategory, data, false);
+    }
+    else {
+        populateCategoryHeader(selectedCategory);
+        const data = await getBooksByCategory(selectedCategory);  
+        markup = singleCategoryMarkup(selectedCategory, data, true);
+    }
     list.innerHTML = markup;
 })
 
