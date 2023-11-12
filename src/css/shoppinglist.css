@@ -1,24 +1,54 @@
 .container {
-  display: flex;
-  flex-wrap: wrap;
+  width: 100%;
+  margin: 0 auto;
 
+  @media screen and (min-width: 480px) {
+      width: 480px;
+  }
 
+  @media screen and (min-width: 768px) {
+      width: 768px;
+  }
+
+  @media screen and (min-width: 1200px) {
+      width: 1200px;
+  }
+}
+
+.is-hidden {
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    border: 0;
+    padding: 0;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    margin: -1px;
 }
 
 .img {
     width: 100px;
     height: 142px;
     object-fit: cover;
+
+    @media screen and (min-width: 768px) {
+      width: 116px;
+      height: 165px;
+      margin-top: 10px;
+  }
 }
 
-.info{
+.info {
   margin-left: 14px;
 }
-/* .list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-} */
+
+.list {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
 .card-item {
   display: flex;
   position: relative;
@@ -31,12 +61,17 @@
   border-radius: 16px;
   border: 2px solid #4F2EE8;
   background: #fcfcfc;
+
+  @media screen and (min-width: 768px) {
+    width: 704px;
+    height: 213px;
+}
+  @media screen and (min-width: 1200px) {
+    width: 996px;
 }
 
-.info {
-display: flex;
-flex-wrap: wrap;
 }
+
 
 .shopping_title{
   margin-bottom: 4px;
@@ -47,6 +82,10 @@ flex-wrap: wrap;
   line-height: 1.12;
 
   color: var(--primary-color);
+
+  @media screen and (min-width: 768px) {
+    margin-top: 10px;
+}
 }
 
 .list_name {
@@ -57,6 +96,10 @@ flex-wrap: wrap;
   font-size: 12px;
   line-height: 1.16;
   color: #B4AFAF;
+
+  @media screen and (min-width: 768px) {
+    margin-bottom: 14px;
+}
 }
 
 .desc {
@@ -70,6 +113,10 @@ flex-wrap: wrap;
   line-height: 1.28;
 
 color: var(--primary-color);
+
+@media screen and (min-width: 768px) {
+  margin-bottom: 48px;
+}
 }
 
 
@@ -79,6 +126,9 @@ color: var(--primary-color);
   line-height: 1.16;
   color: #B4AFAF;
 
+  @media screen and (min-width: 768px) {
+    margin-bottom: 10px;
+  }
 }
 
 .title-part,
@@ -87,7 +137,22 @@ color: var(--primary-color);
   font-weight: 700;
   font-size: 32px;
   line-height: 1.18;
+  min-width: 380px;
+
+  margin-bottom: 120px;
   color: black;
+
+  @media screen and (min-width:768px) {
+    font-size: 48px;
+    line-height: 1.08;
+
+    margin-left: 32px;
+    margin-bottom: 140px;
+  }
+
+  @media screen and (min-width: 1200px) {
+}
+
 }
 
 .title {
@@ -97,6 +162,20 @@ margin-left: 20px;
 margin-right: 162px;
 
 color: #4F2EE8;
+}
+
+.booksimg {
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.shooping-message {
+font-family: 'DM Sans';
+font-size: 14px ;
+text-align: center;
+margin-bottom: 14px;
+
 }
 
 .btn-delete {
