@@ -68,6 +68,10 @@
 }
   @media screen and (min-width: 1200px) {
     width: 996px;
+    height: 213px;
+
+    margin-right: 0;
+    margin-left: auto;
 }
 
 }
@@ -142,17 +146,13 @@ color: var(--primary-color);
   margin-bottom: 120px;
   color: black;
 
-  @media screen and (min-width:768px) {
+  @media screen and (min-width: 768px) {
     font-size: 48px;
     line-height: 1.08;
 
     margin-left: 32px;
     margin-bottom: 140px;
   }
-
-  @media screen and (min-width: 1200px) {
-}
-
 }
 
 .title {
@@ -162,12 +162,18 @@ margin-left: 20px;
 margin-right: 162px;
 
 color: #4F2EE8;
+
+@media screen and (min-width: 1200px) {
+  margin-right: 728px;
+}
+
 }
 
 .booksimg {
 display: flex;
 align-items: center;
 justify-content: center;
+border-radius: 8px;
 }
 
 .shooping-message {

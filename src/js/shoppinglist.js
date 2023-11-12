@@ -911,8 +911,9 @@ if (books.length){
   elements.container.insertAdjacentHTML('afterbegin', createMarkup(books));
   elements.clearBtn.addEventListener('click', handlerClearBasket)
   } else {
-    elements.booksImg.classList.remove = 'is-hidden';
     elements.message.classList.remove = 'is-hidden';
+    elements.booksImg.classList.remove = 'is-hidden';
+
   }
 
 
