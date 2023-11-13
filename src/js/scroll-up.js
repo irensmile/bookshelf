@@ -8,17 +8,22 @@ function changeTheme() {
     if (isDark) {
         isDark = false;
         localStorage.removeItem("ui-theme");
+
         body.classList.remove("dark-theme");
+        switcher.classList.remove("active");
     } else { 
         isDark = true;
         localStorage.setItem("ui-theme", "dark");
+
         body.classList.add("dark-theme");
+        switcher.classList.add("active");
     }
 }
 
 window.addEventListener("load", () => {
     if (localStorage.getItem("ui-theme")) { 
         body.classList.add("dark-theme");
+        switcher.classList.add("active");
     }
 });
 

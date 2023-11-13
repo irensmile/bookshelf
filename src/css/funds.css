@@ -20,7 +20,14 @@
         max-height: 474px;
         padding-right: 45px;
         padding-bottom: 24px;
+
     }
+}
+
+@media only screen and (max-width: 768px) {
+  .funds {
+    visibility: hidden;
+  }
 }
 
 @media only screen and (min-width: 1280px) {
@@ -28,6 +35,7 @@
         width: 356px;
         max-width: none;
         margin-bottom: auto;
+
     }
 }
 
@@ -46,7 +54,7 @@
 }
 
 .sup-title {
-    color: var(--secondary-color);
+    color: var(--same-white);
     font-family: 'DM Sans', sans-serif;
     font-size: 22px;
     line-height: 1.1;
@@ -61,7 +69,7 @@
 }
 
 .trident-icon {
-    fill: var(--secondary-color);
+    fill: var(--same-white);
 }
 
 .organizations {
@@ -83,7 +91,7 @@
 }
 
 .org-item {
-    color: var(--secondary-color);
+    color: var(--same-white);
     font-family: DM Sans;
     font-size: 14px;
     line-height: 1.2;
@@ -107,7 +115,7 @@
     height: 32px;
     border-radius: 50px;
     border: 3px solid rgba(53, 53, 147, 0.1);
-    background-color: var(--secondary-color);
+    background-color: var(--same-white);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -123,12 +131,12 @@
 }
 
 .active-btn {
-    background-color: var(--location-text-color);
+    background-color: var(--same-blue);
     border-color: rgba(135, 125, 176, 0.626);
 }
 
 .icon-arrow {
-    fill: var(--location-text-color);
+    fill: var(--same-blue);
 }
 
 .transform {
