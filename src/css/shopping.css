@@ -2,42 +2,8 @@
 @import url('./reset.css');
 @import url('./header.css');
 @import url('./menu.css');
-/* @import url('./funds.css'); */
+@import url('./authorisation.css');
+@import url('./funds.css');
 @import url('./shoppinglist.css');
 @import url('./popup.css');
-/* @import url('./main.css'); */
-
-body {
-  font-family: 'DM Sans', sans-serif;
-  font-family: 'Montserrat', sans-serif;
-  font-family: 'Seymour One', sans-serif;
-  background-color: var(--background-body-color);
-}
-
-:root {
-  --primary-color: #111111;
-  --same-white: #ffffff;
-  --secondary-color: #ffffff;
-  --location-text-color: #4f2ee8;
-  --same-blue: #4f2ee8;
-  --accent-color: #eac645;
-  --background-color: #d0d0d0;
-  --background-body-color: #f6f6f6;
-  --light-gray: #e0e0e0;
-  --dark-color: rgba(17, 17, 17, 0.6);
-  --light-gray-text: #b4afaf;
-}
-
-.dark-theme {
-  --primary-color: #ffffff;
-  --same-white: #ffffff;
-  --same-blue: #4f2ee8;
-  --secondary-color: #111111;
-  --location-text-color: #eac645;
-  --accent-color: #eac645;
-  --background-color: #d0d0d0;
-  --background-body-color: #202024;
-  --light-gray: rgba(17, 17, 17, 0.6);
-  --dark-color: rgba(255, 255, 255, 0.6);
-  --light-gray-text: #b4afaf;
-}
+@import url('./main.css');
