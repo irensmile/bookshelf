@@ -19,7 +19,7 @@
     />
     
     <script type="module" crossorigin src="/project-ScriptMasters14/commonHelpers.js"></script>
-    <link rel="modulepreload" crossorigin href="/project-ScriptMasters14/assets/scroll-up-c4d95e29.js">
+    <link rel="modulepreload" crossorigin href="/project-ScriptMasters14/assets/scroll-up-7077472c.js">
     <link rel="modulepreload" crossorigin href="/project-ScriptMasters14/assets/vendor-77e6b4aa.js">
     <link rel="stylesheet" href="/project-ScriptMasters14/assets/index-002756fe.css">
   </head>
@@ -75,7 +75,7 @@
             height="26"
             class="icon"
             aria-label="Sign in button icon"
-              onclick="document.getElementById('sign-in-button-main').click()"
+            onclick="openAuthModal(document.getElementById('authModal'))"
 
           >
             <use href="/project-ScriptMasters14/assets/icons-410ee530.svg#icon-arrow-right"></use>
@@ -207,15 +207,15 @@
         <button type="submit" class="btn-sign-up">Sign up</button>
       </form>
       <div class="auth-form-options">
-        <span><a href="#" id="signin-link">Sign In</a></span>
-        <span class="signup-underline"
+        <span id="signin-span"><a href="#" id="signin-link">Sign In</a></span>
+        <span id="signup-span" class="signup-underline"
           ><a href="#" id="signup-link">Sign Up</a></span
         >
       </div>
     </div>
   </div>
 </div>
-
+ 
     </header>
     <main>
       <div class="main-page-structure">
