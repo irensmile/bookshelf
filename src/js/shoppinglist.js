@@ -923,6 +923,6 @@ if (books.length){
     bookslist.removeItem('BOOKS_KEY');
   }
 
-  console.log(createMarkup(bookslist));
+  createMarkup(bookslist);
 
 

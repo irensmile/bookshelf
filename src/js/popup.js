@@ -7,18 +7,24 @@ const elements = {
   closeBtn: document.querySelector('.modal-btn-close'),
 };
 
-document.querySelector('.books').addEventListener('click', ((event) => {
-  let cardBookId = null;
-  if (event.target.classList.contains('book-block'))
-    cardBookId = event.target.dataset.book;
-  else if (event.target.parentNode.classList.contains('book-block'))
-    cardBookId = event.target.parentNode.dataset.book;
-  else
-    // клікнули поза карткою книги, пропускаємо
-    return
-  
-  console.log('Opening popup for book id', cardBookId);
-})) 
+const booksListElement = document.querySelector('.books');
+if (booksListElement) {
+  // Цей код не буде працювати на shopping html, оскільки там немає Div з класом book
+  // потрібно доробити, щоб показувати модалку і на shopping.html
+  document.querySelector('.books').addEventListener('click', ((event) => {
+    let cardBookId = null;
+    if (event.target.classList.contains('book-block'))
+      cardBookId = event.target.dataset.book;
+    else if (event.target.parentNode.classList.contains('book-block'))
+      cardBookId = event.target.parentNode.dataset.book;
+    else
+      // клікнули поза карткою книги, пропускаємо
+      return
+    
+    console.log('Opening popup for book id', cardBookId);
+  }))   
+}
+
 
 // elements.startBtn.addEventListener('click', () => {
 //   elements.modal.classList.add('visible-element');
