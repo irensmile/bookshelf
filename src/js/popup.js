@@ -1,97 +1,152 @@
 // =====================Логика открыть/закрыть модалку===========================
 
+import axios from 'axios';
+import { throttle } from 'lodash';
+
 const elements = {
-  // должна замениться на ссылку книиги
-  //   startBtn: document.querySelector('.btn-js'),
-  modal: document.querySelector('.cover-modal'),
+  coverModal: document.querySelector('.cover-modal'),
+  modalCoverContant: document.querySelector('.modal-cover-contant'),
   closeBtn: document.querySelector('.modal-btn-close'),
+  body: document.querySelector('body'),
+  //====================Добавление товара в корзину================
+  addBtn: document.querySelector('.add'),
+  removeBtn: document.querySelector('.remove'),
+  openListBtn: document.querySelector('.open-list'),
+  modalText: document.querySelector('.modal-add-text'),
 };
 
-document.querySelector('.books').addEventListener('click', ((event) => {
+document.querySelector('.books').addEventListener('click', event => {
   let cardBookId = null;
   if (event.target.classList.contains('book-block'))
     cardBookId = event.target.dataset.book;
   else if (event.target.parentNode.classList.contains('book-block'))
     cardBookId = event.target.parentNode.dataset.book;
-  else
-    // клікнули поза карткою книги, пропускаємо
-    return
-  
-  console.log('Opening popup for book id', cardBookId);
-})) 
+  else return;
 
-// elements.startBtn.addEventListener('click', () => {
-//   elements.modal.classList.add('visible-element');
+  getBookInfo(cardBookId);
+});
 
-//   // проверка для отрисовки кнопок если книга в корзине
-//   changeTextBtn();
+async function getBookInfo(id) {
+  const BASE_URL = 'https://books-backend.p.goit.global/books/';
+  try {
+    const respons = await axios(BASE_URL + id);
 
-//   document.addEventListener('keydown', escCloseModal);
-// });
+    const bookData = respons.data;
 
-// elements.modal.addEventListener('click', e => {
-//   if (
-//     e.target.classList.contains('cover-modal') ||
-//     e.target.classList.contains('modal-btn-close')
-//   ) {
-//     elements.modal.classList.remove('visible-element');
-//     document.removeEventListener('keydown', escCloseModal);
-//   }
-// });
+    marcapModal(bookData);
+
+    elements.addBtn.addEventListener('click', () => addBookToList(bookData));
+
+    openModl();
+
+    changeTextBtn(bookData._id);
+
+    elements.removeBtn.addEventListener('click', () =>
+      removeBookFromList(bookData)
+    );
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+function marcapModal(data) {
+  const content = `
+                <img src="${data.book_image}" alt="book cover" class="modal-img">
+
+                <div class="modal-contant-box">
+                    <h2 class="modal-title">${data.title}</h2>
+                    <h3 class="modal-book-author">${data.author}</h3>
+                    <p class="modal-text">In a homage to Louisa May Alcott’s “Little Women,” a young man’s dark past
+                        resurfaces
+                        as
+                        he gets to the know
+                        the family
+                        of his college sweetheart.</p>
+                    <ul class="modal-list">
+                        <li class="modal-item"><a href="${data.buy_links[0].url}" target="_blank" rel="noopener noreferrer nofollow"
+                                class="modal-link">
+                                <img src="../images/image1.png" alt="" class="modal-icon amazone-js">
+                            </a></li>
+                        <li class="modal-item"><a href="${data.buy_links[1].url}" target="_blank" rel="noopener noreferrer nofollow"
+                                class="modal-link">
+                                <img src="../images/image1(1).png" alt="" class="modal-icon">
+
+                            </a></li>
+                    </ul>
+                </div>
+    `;
+
+  elements.modalCoverContant.innerHTML = content;
+}
+
+function openModl() {
+  elements.coverModal.classList.add('visible-element');
+
+  elements.body.classList.add('no-scroll');
+
+  document.addEventListener('keydown', throttle(escCloseModal, 500));
+}
+
+elements.coverModal.addEventListener('click', e => {
+  if (
+    e.target.classList.contains('cover-modal') ||
+    e.target.classList.contains('modal-btn-close')
+  ) {
+    elements.coverModal.classList.remove('visible-element');
+    elements.body.classList.remove('no-scroll');
+    document.removeEventListener('keydown', escCloseModal);
+  }
+});
 
 function escCloseModal(e) {
   if (e.key === 'Escape') {
-    elements.modal.classList.remove('visible-element');
+    elements.coverModal.classList.remove('visible-element');
     document.removeEventListener('keydown', escCloseModal);
   }
 }
-// // ==================================================
 
 //====================Добавление товара в корзину================
 
-const addBtn = document.querySelector('.add');
-const removeBtn = document.querySelector('.remove');
-// --------добавил от себя єту кнопку, мне показалась она умесной (в html тоже)
-const openListBtn = document.querySelector('.open-list');
-const modalText = document.querySelector('.modal-add-text');
-
-//addBtn.addEventListener('click', addBookToList);
-//removeBtn.addEventListener('click', removeBookFromList);
-
-// При нажатии на книгу(ссылку) по логике оно должно отправлять запрос для полной информации о книге и от этого отрисовывать модальное
-// окно. при нажатии кнопки добавить в єту функцию аргументом должен приходить обект которій и запишеться в localStorage.
-
 function addBookToList(book) {
-  try {
-    localStorage.setItem(`${book._id}`, JSON.stringify(book));
+  const booksInList = getBooksInList();
+  booksInList[book._id] = book;
+  saveBooksInList(booksInList);
+  changeTextBtn(book._id);
+}
 
-    changeTextBtn(`${book._id}`);
-  } catch (error) {
-    console.error('Set state error: ', error.message);
+function removeBookFromList(book) {
+  const booksInList = getBooksInList();
+  console.log(booksInList);
+  if (booksInList[book._id]) {
+    delete booksInList[book._id];
+    saveBooksInList(booksInList);
   }
+  changeTextBtn(book._id);
+}
+
+function getBooksInList() {
+  return JSON.parse(localStorage.getItem('booksInList')) || {};
+}
+
+function saveBooksInList(booksInList) {
+  localStorage.setItem('booksInList', JSON.stringify(booksInList));
 }
 
 function changeTextBtn(id) {
-  const bookInList = localStorage.getItem(id);
+  try {
+    const booksInList = JSON.parse(localStorage.getItem('booksInList')) || {};
 
-  if (bookInList === null) {
-    return;
+    if (booksInList[id]) {
+      elements.addBtn.style.display = 'none';
+      elements.removeBtn.style.display = 'block';
+      elements.modalText.style.display = 'block';
+    } else {
+      elements.addBtn.style.display = 'block';
+      elements.removeBtn.style.display = 'none';
+      elements.modalText.style.display = 'none';
+    }
+  } catch (error) {
+    console.log(error);
   }
-  addBtn.style.display = 'none';
-  removeBtn.style.display = 'block';
-  openListBtn.style.display = 'flex';
-  modalText.style.display = 'block';
 }
-
-// Эту надо будет подправить при подклучении основного функционала
-
-// function removeBookFromList() {
-//   localStorage.removeItem(`${book._id}`);
-
-//   addBtn.style.display = 'block';
-//   removeBtn.style.display = 'none';
-//   openListBtn.style.display = 'none';
-//   modalText.style.display = 'none';
-// }
-
 // ===========================================
