@@ -9,7 +9,6 @@ async function fetchCategories() {
       const response = await axios.get(BASE_URL + endpointList);
     
       if (response.status === 200) {
-        console.log(response.data);
         const categories = response.data; 
         const categoriesList = document.querySelector('.categories-list');
 

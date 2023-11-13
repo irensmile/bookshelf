@@ -35,11 +35,13 @@ function singleCategoryMarkup(categoryName, books, isSingleCategory) {
 function booksMarkup(books) {
     // Функція створює розмітку для списку книг
     return books.map((book) => {
-        return `<li class = "book-block">
-            <img src="${book.book_image}" class="book-pic" width=120 heigh=240 />
-            <p class="book-name">${book.title}</p>
-            <p class="book-author">${book.author}</p>
-        </li>`
+        return `<li>
+                <div data-book=${book._id} class="book-block">
+                    <img src="${book.book_image}" class="book-pic" width=120 heigh=240 />
+                    <p class="book-name">${book.title}</p>
+                    <p class="book-author">${book.author}</p>
+                </div>
+         </li>`
     }).join('');
 }
 
