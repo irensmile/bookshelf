@@ -851,6 +851,7 @@ pageName: document.querySelector('.js-title'),
 message: document.querySelector('.js-message'),
 booksImg: document.querySelector('.js-books'),
 }
+
 const BOOKS_KEY = 'shoppinglist'
 const books = JSON.parse(localStorage.getItem(BOOKS_KEY)) ?? [];
 
@@ -904,24 +905,22 @@ function createMarkup(arr) {
 elements.container.insertAdjacentHTML("afterbegin", createMarkup(bookslist));
 
 if (books.length){
-  elements.booksImg.style.display.visability = 'visible';
-  elements.message.style.display = 'block';
+  elements.booksImg.style.visibility = 'visible';
+  elements.message.style.visibility = 'visible';
 
   elements.container.insertAdjacentHTML('afterbegin', createMarkup(books));
   elements.clearBtn.addEventListener('click', handlerClearBasket);
   } else {
-    elements.booksImg.style.visability = 'hidden';
+    elements.booksImg.style.display = 'none';
     elements.message.style.display = 'none';
-
-
-
 
   }
 
 
-  function handlerClearBasket() {
-    localStorage.removeItem('${book._id}');
-    bookslist.removeItem('${book._id}')
+  function handlerClearBasket(evt) {
+    localStorage.removeItem('BOOKS_KEY');
+    window.location.href = "./index.html";
+    bookslist.removeItem('BOOKS_KEY');
   }
 
   console.log(createMarkup(bookslist));

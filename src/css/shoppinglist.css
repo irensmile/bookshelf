@@ -21,10 +21,11 @@
 
   @media screen and (min-width: 1200px) {
       width: 1200px;
+
   }
 }
 
-.is-hidden {
+.hidden {
     position: absolute;
     white-space: nowrap;
     width: 1px;
@@ -35,6 +36,7 @@
     clip: rect(0 0 0 0);
     clip-path: inset(50%);
     margin: -1px;
+
 }
 
 .img {
@@ -251,4 +253,10 @@ book-icon {
 width: 16px;
 height: 16px;
 right: 0px;
+visibility: visible;
+}
+
+.position {
+  position: relative;
+  top: -460px;
 }
