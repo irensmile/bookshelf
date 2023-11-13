@@ -1,5 +1,6 @@
 import { getTopBooks, getBooksByCategory } from "./books-api";
 const list = document.querySelector('.books')
+const categoryList = document.querySelector('.categories-list');
 const booksCategoryName = document.querySelector("#books-category-name");
 
 // Завантаження даних перенесено в books-api.js
@@ -10,25 +11,25 @@ async function loadOnStartup() {
     // Функція оголошена, як асинхронна, так як ми маємо дочекатися завантаження даних.
     const booksData = await getTopBooks();
     // після одержання даних викликаємо функцію, яка генерує html розмітка
-    categoriesMarkup(booksData);
+    const markup = categoriesMarkup(booksData);
+    list.insertAdjacentHTML('beforeend', markup);
 }
 
 function categoriesMarkup(data) {
     // Функція створює розмітку для одержаних категорій
     // Далі для кожної категорії викликаємо функцію розмітки для книг (booksMarkup)
-    const markup = data.map((res) => {
+    return data.map((res) => {
         return singleCategoryMarkup(res.list_name, res.books, false)
     });
-    list.insertAdjacentHTML('beforeend', markup)
 }
 
 function singleCategoryMarkup(categoryName, books, isSingleCategory) {
     let markup = !isSingleCategory ? `<div class = "books-list-name" >${categoryName}</div>` : '';
     markup +=  `<ul class="books-container ${isSingleCategory ? 'books-container-multi': ''}">
                     ${booksMarkup(books)}
-                </ul>
-                <button class = "books-btn" type = "button" id = "${categoryName}"> SEE MORE </button>
-                `
+                </ul>`
+    const buttonMarkup = !isSingleCategory ? `<button class = "books-btn" type = "button" id="${categoryName}"> SEE MORE </button>` : '';
+    markup += buttonMarkup
     return markup;
 }
 
@@ -85,10 +86,9 @@ categoryItems.forEach(function(category) {
 
     })
 })*/
-const categoryList = document.querySelector('.categories-list');
 
 // Обробник кліку на категорії - завантажуємо книги для категорії і виділяємо акитивну категорію
-categoryList.addEventListener("click", async (e) => { 
+categoryList.addEventListener("click", async (e) => {
     e.preventDefault();
     
     if (e.target == categoryList) {
@@ -96,16 +96,21 @@ categoryList.addEventListener("click", async (e) => {
         return;
     }
     const selectedCategory = e.target.innerHTML;
-    for (const child of e.currentTarget.children) {
-        console.log(child.classList.remove('is-active-item'));
-    }
-    e.target.classList.add('is-active-item');
+    reloadBooksForCategory(selectedCategory);
+});
+
+async function reloadBooksForCategory(selectedCategory) {
+    for (const child of categoryList.children)
+        if (child.innerHTML != selectedCategory)
+            child.classList.remove('is-active-item');
+        else
+            child.classList.add('is-active-item');
     
     let markup = null
     if (selectedCategory == "All categories") {
         populateCategoryHeader('Best Sellers Books');
-        const data = await getTopBooks(); 
-        markup = categoriesMarkup(selectedCategory, data, false);
+        const data = await getTopBooks();
+        markup = categoriesMarkup(data);
     }
     else {
         populateCategoryHeader(selectedCategory);
@@ -113,7 +118,8 @@ categoryList.addEventListener("click", async (e) => {
         markup = singleCategoryMarkup(selectedCategory, data, true);
     }
     list.innerHTML = markup;
-})
+    window.scrollTo({ top: 0, behavior: "smooth"})
+}
 
 function populateCategoryHeader(categoryName) {
     // Update categories header (h1) with selected category name
@@ -121,19 +127,23 @@ function populateCategoryHeader(categoryName) {
     booksCategoryName.innerHTML = `<span class="dark-text">${words[0]}</span> ${words.slice(1).join(' ')}`;
 }
 
+// Це не працює - код виконується, коли кнопки ще не створені (або можуть бути перезавантажені)
+// Як варіант, можна підписатися на onclick до батьківського div, який завжди існує і далі визначить, коли клік приходить від кнопки
+// const buttonsForCateg = document.querySelectorAll(".books-btn");
+// console.log('Batoni', buttonsForCateg);
+// buttonsForCateg.forEach(function(button) {
+//     button.addEventListener("click", function() {
+//         const showList = categoryItems.map(url)
+//     list.insertAdjacentHTML("beforeend", showList)
+//     console.log(list)
+//     });
+// });
 
-const buttonsForCateg = document.querySelectorAll(".books-btn");
-
-buttonsForCateg.forEach(function(button) {
-    button.addEventListener("click", function() {
-        const showList = categoryItems.map(url)
-    list.insertAdjacentHTML("beforeend", showList)
-    console.log(list)
-    });
-});
-
-// categoryItems.addEventListener("click", function() { 
-//     const selectedCategory = categoryItems.value;
-//     const url = "https://books-backend.p.goit.global/books/category?category=" + selectedCategory;
-//     axios.get(url)
-//         .then(response) })
+list.addEventListener('click', async (event) => {
+    // Тільки коли клікнули на кнопці, завантажуємо книги цієї категорії
+    if (event.target.classList.contains('books-btn')) {
+        console.log('here');
+        const selectedCategory = event.target.id;
+        reloadBooksForCategory(selectedCategory);
+    }
+})
