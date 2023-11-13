@@ -1,7 +1,8 @@
 import './js/header.js';
 import './js/menu.js';
 import './js/organizations.js';
-import './js/authorisation.js';
+// There is no authourization on shoppings.html
+//import './js/authorisation.js';
 import './js/charities.js';
 import './js/shoppinglist.js';
 import './js/footer.js';
