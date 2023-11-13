@@ -14,6 +14,7 @@
   background-color: rgba(79, 46, 232, 0.3);
   border: none;
   border-radius: 50%;
+  z-index: 999;
 
   transition: background-color 350ms ease-in-out, scale 350ms ease-in-out;
 }
