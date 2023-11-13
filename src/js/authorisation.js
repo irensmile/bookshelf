@@ -10,11 +10,13 @@ document.addEventListener('DOMContentLoaded', function () {
     openModalBtn.addEventListener('click', function () {
       authModal.style.display = 'block';
     });
-  
+  if (authFormClose) {
+    // Cхоже, форми авторизації немає на shopping.html
+
     authFormClose.addEventListener('click', function () {
       authModal.style.display = 'none';
     });
-  
+
     signupLink.addEventListener('click', function () {
       signinForm.style.display = 'none';
       signupForm.style.display = 'block';
@@ -43,6 +45,7 @@ document.addEventListener('DOMContentLoaded', function () {
       localStorage.setItem('userData', userDataJSON);
       this.reset();
     });
+  };
   });
   
    

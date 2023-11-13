@@ -1,5 +1,6 @@
 import './js/header.js';
 import './js/menu.js';
+import './js/organizations.js';
 import './js/authorisation.js';
 import './js/charities.js';
 import './js/shoppinglist.js';

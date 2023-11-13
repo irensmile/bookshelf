@@ -20,7 +20,14 @@
         max-height: 474px;
         padding-right: 45px;
         padding-bottom: 24px;
+
     }
+}
+
+@media only screen and (max-width: 768px) {
+  .funds {
+    visibility: hidden;
+  }
 }
 
 @media only screen and (min-width: 1280px) {
@@ -28,6 +35,7 @@
         width: 356px;
         max-width: none;
         margin-bottom: auto;
+
     }
 }
 
