@@ -151,5 +151,6 @@
     flex-direction: column;
     flex-wrap: nowrap;
     align-content: center;
+    padding-bottom: 40px;
     width: 996px;
 }
