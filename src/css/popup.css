@@ -25,7 +25,7 @@
 
 .modal {
     max-width: 332px;
-    max-height: 778px;
+    max-height: 825px;
     background-color: var(--secondary-color);
     border: 2px solid var(--primary-color);
     border-radius: 18px;
