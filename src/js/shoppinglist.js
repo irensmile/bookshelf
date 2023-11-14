@@ -45,11 +45,9 @@ function createBuyLinksMarkup(buyLinks) {
     return buyLinks.map((buyLink) => {
       let sellerLogo = null;
       let cssClass = null;
-      console.log("!!!", buyLink.name)
       switch (buyLink.name) {
         case 'Amazon': {
           cssClass = "social-icon-amazon"
-          console.log('****')
           sellerLogo = '../images/amazon_logo.jpg';
           break;
         }
