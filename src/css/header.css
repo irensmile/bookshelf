@@ -273,13 +273,20 @@
       gap: 24px;
     }
   }
-  .menu-link:hover,
+  /*.menu-link:hover,
   .menu-link:focus {
    
     border-radius: 36px;
     background: var(--accent-color);
     transform: translateY(-2px);
 
+  }*/
+  .current::after {
+    content: "";
+    position: absolute;
+    border-radius: 36px;
+    background: var(--accent-color);
+    transform: translateY(-2px);
   }
   .arrow-right {
     position: absolute;
