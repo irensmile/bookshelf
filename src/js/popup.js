@@ -13,23 +13,20 @@ const elements = {
   removeBtn: document.querySelector('.remove'),
   openListBtn: document.querySelector('.open-list'),
   modalText: document.querySelector('.modal-add-text'),
+  booksListElement: document.querySelector('.books')
 };
 
-const booksListElement = document.querySelector('.books');
-if (booksListElement) {
-  // Цей код не буде працювати на shopping html, оскільки там немає Div з класом book
-  // потрібно доробити, щоб показувати модалку і на shopping.html
-  booksListElement.addEventListener('click', event => {
-    let cardBookId = null;
-    if (event.target.classList.contains('book-block'))
-      cardBookId = event.target.dataset.book;
-    else if (event.target.parentNode.classList.contains('book-block'))
-      cardBookId = event.target.parentNode.dataset.book;
-    else return;
+elements.booksListElement.addEventListener('click', event => {
+  let cardBookId = null;
+  if (event.target.classList.contains('book-block'))
+    cardBookId = event.target.dataset.book;
+  else if (event.target.parentNode.classList.contains('book-block'))
+    cardBookId = event.target.parentNode.dataset.book;
+  else return;
 
-    getBookInfo(cardBookId);
-  });
-}
+  getBookInfo(cardBookId);
+});
+
 
 async function getBookInfo(id) {
   const BASE_URL = 'https://books-backend.p.goit.global/books/';
