@@ -4,25 +4,25 @@
   display: flex;
   flex-wrap: wrap;
 
-  /* position: absolute;
-  top: 70px;
-  right: 20px; */
-
   @media screen and (min-width: 480px) {
       width: 480px;
   }
 
   @media screen and (min-width: 768px) {
-      width: 768px;
-      /* position: absolute;
-    top: 80px;
-    right: 8px */
+    width: 768px;
+
+
   }
 
   @media screen and (min-width: 1200px) {
       width: 1200px;
 
   }
+
+  @media screen and (min-width: 1440px) {
+    width: 1440px;
+
+}
 }
 
 .hidden {
@@ -59,6 +59,15 @@
 .list {
   margin-left: 20px;
   margin-right: 20px;
+
+  @media screen and (min-width: 768px) {
+    margin-left: 32px;
+    margin-right: 32px;
+}
+  @media screen and (min-width: 1200px) {
+  margin-left: 40px;
+  margin-right: 24px;
+}
 }
 
 .card-item {
@@ -79,11 +88,16 @@
     height: 213px;
 }
   @media screen and (min-width: 1200px) {
-    width: 996px;
+    width: 930px;
     height: 213px;
 
     margin-right: 0;
     margin-left: auto;
+}
+
+@media screen and (min-width: 1440px) {
+  width: 996px;
+
 }
 
 }
@@ -164,7 +178,16 @@ color: var(--primary-color);
     line-height: 1.08;
 
     margin-left: 32px;
-    margin-bottom: 140px;
+    margin-bottom: 40px;
+
+  }
+  @media screen and (min-width: 1200px) {
+    font-size: 48px;
+    line-height: 1.08;
+
+    margin-left: 32px;
+    margin-bottom: 40px;
+
   }
 }
 
@@ -176,9 +199,6 @@ margin-right: 162px;
 
 color: var(--same-blue);
 
-@media screen and (min-width: 1200px) {
-  margin-right: 728px;
-}
 
 }
 
@@ -194,8 +214,8 @@ border-radius: 8px;
   position: absolute;
   border: 2px solid var(--same-blue);
   background-color: var(--same-blue);
-  top: 14px;
-  right: 14px;
+  top: 24px;
+  right: 24px;
 
   border-radius: 50%;
   width: 28px;
@@ -208,12 +228,29 @@ border-radius: 8px;
   cursor: pointer;
 }
 
-.social-icon {
+.social-icon-book {
   position: absolute;
-  right: 38px;
-  bottom: 14px;
-  width: 32px;
-  height: 11px;
+  right: 24px;
+  bottom: 24px;
+  width: 28px;
+  height: 27px;
+}
+
+.social-icon-amazon {
+  position: absolute;
+  bottom: 24px;
+  right: 24px;
+
+  width: 48px;
+  height: 15px;
+  margin-bottom: 0px;
+  margin-right: 6px;
+}
+
+social-icon-amazon:hover {
+  fill: var(--location-text-color);
+  stroke: var(--location-text-color);
+
 }
 
 .shopping-message {
@@ -226,7 +263,19 @@ border-radius: 8px;
   margin-bottom: 14px;
   margin-right: 65.5px;
   margin-left: 65.5px;
+  width: 244px;
 
+  @media screen and (min-width: 768px) {
+    margin-left: 210px;
+    margin-right: 209px;
+    margin-top: 140px;
+  }
+
+  @media screen and (min-width: 1200px) {
+
+    margin-left: 355px;
+    margin-right: 356px;
+  }
 }
 
 .shopping-books {
@@ -236,6 +285,20 @@ border-radius: 8px;
   margin-right: 55px;
   margin-bottom: 302px;
 
+  @media screen and (min-width: 768px) {
+    width: 322px;
+    height: 241px;
+    margin-left: 210px;
+    margin-right: 209px;
+    margin-bottom: 140px;
+  }
+
+  @media screen and (min-width: 1200px) {
+
+    margin-left: 355px;
+    margin-right: 356px;
+    margin-bottom: 157px;
+  }
 }
 
 .amazon_logo {
@@ -249,14 +312,23 @@ border-radius: 8px;
   margin-left: 8px;
 }
 
-book-icon {
-width: 16px;
-height: 16px;
-right: 0px;
-visibility: visible;
+.position {
+  /*position: relative;*/
+  top: -450px;
+
+  @media screen and (min-width: 768px) {
+    top: -470px;
+
+  }
+
+  @media screen and (min-width: 1200px) {
+    left: 235px;
+    /* margin-left: 40px;
+    margin-right: 24px; */
+  }
+
+  @media screen and (min-width: 1440px) {
+    left: 400px;
+  }
 }
 
-.position {
-  /* position: relative; 
-  top: -460px; */
-}

@@ -7,6 +7,7 @@
 .funds {
     max-width: 335px;
     max-height: 460px;
+
     flex-shrink: 0;
     border-radius: 16px;
     background: radial-gradient(189.32% 190.93% at 59.76% -23.42%, #4F2EE8 18.03%, #FFF 100%);
@@ -19,15 +20,17 @@
     .funds {
         width: 232px; /*REDUCE FOR PADDINGS*/
         max-height: 474px;
-        padding-right: 45px;
         padding-bottom: 24px;
+
+
 
     }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1199px) {
   .funds {
     visibility: hidden;
+    opacity: 0;
   }
 }
 
