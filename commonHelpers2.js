@@ -15,25 +15,25 @@ import"./assets/scroll-up-2f72e7b4.js";const a=[{_id:"642fd89ac8cf5ee957f122da",
    <ul class="socials_list">
    <li class = "amazon_logo">
      <a
-       class="social-icon"
+       class="social-icon-amazon"
        href="https://www.amazon.com/"
        target="_blank"
        rel="nofollow noopener noreferrer"
        aria-label="Amazon icon"
      >
-     <img src="./images/amazon_logo.png" alt="amazon" width ='48px' height='15' />
+     <img src="./images/amazon_logo.jpg" alt="amazon" width ='48px' height='15' />
 
      </a>
    </li>
    <li class = "book-icon">
      <a
-       class="social-icon"
+       class="social-icon-book"
        href="https://www.apple.com/ua/apple-books/"
        target="_blank"
      rel="nofollow noopener noreferree"
        aria-label="Book icon"
      >
-     <img src="./images/apple_books.png" alt="books" />
+     <img src="./images/apple_books.jpg" alt="books" width ='32px' height='32px'/>
 
      </a>
  </li>
