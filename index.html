@@ -14,7 +14,7 @@
   <script type="module" crossorigin src="/project-ScriptMasters14/commonHelpers.js"></script>
   <link rel="modulepreload" crossorigin href="/project-ScriptMasters14/assets/scroll-up-2f72e7b4.js">
   <link rel="modulepreload" crossorigin href="/project-ScriptMasters14/assets/vendor-a9f52953.js">
-  <link rel="stylesheet" href="/project-ScriptMasters14/assets/index-a3991273.css">
+  <link rel="stylesheet" href="/project-ScriptMasters14/assets/index-222c49a2.css">
 </head>
 
 <body>
@@ -323,12 +323,26 @@
   </footer>
 
   <div class="cover-modal">
-  <div class="modal-cover-contant">
-    <button class="modal-btn-close">Close</button>
-    <p class="modal-add-text"></p>
-    <button class="add">Add</button>
-    <button class="remove">Remove</button>
-    <button class="open-list">Open List</button>
+  <div class="modal">
+    <button class="modal-btn-close">
+      <svg width="12" height="12" class="modal-btn-icon">
+        <use href="./Icon.svg"></use>
+      </svg>
+    </button>
+
+    <div class="modal-cover-contant"></div>
+
+    <div class="modal-btn-cover">
+      <button tipe="button" class="modal-btn add">Add to shopping list</button>
+      <button tipe="button" class="modal-btn remove">
+        Remove from the shopping list
+      </button>
+      <!-- <a href="#shoppinglist" class="modal-btn open-list ">Go to basket</a> -->
+      <p class="modal-add-text">
+        Сongratulations! You have added the book to the shopping list. To
+        delete, press the button “Remove from the shopping list”.
+      </p>
+    </div>
   </div>
 </div>
 
