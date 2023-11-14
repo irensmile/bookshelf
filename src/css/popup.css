@@ -81,12 +81,12 @@
 
 }
 
-.modal-cover-contant {
+.modal-cover-content {
     margin-bottom: 44px;
 }
 
 @media screen and (min-width:768px) {
-    .modal-cover-contant {
+    .modal-cover-content {
         display: flex;
         gap: 24px;
         margin-bottom: 40px;
