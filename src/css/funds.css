@@ -27,13 +27,6 @@
     }
 }
 
-@media only screen and (max-width: 1199px) {
-  .funds {
-    visibility: hidden;
-    opacity: 0;
-  }
-}
-
 @media only screen and (min-width: 1280px) {
     .funds {
         width: 356px;
