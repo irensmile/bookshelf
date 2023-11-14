@@ -13,7 +13,7 @@ const elements = {
   removeBtn: document.querySelector('.remove'),
   openListBtn: document.querySelector('.open-list'),
   modalText: document.querySelector('.modal-add-text'),
-  booksListElement: document.querySelector('.books')
+  booksListElement: document.querySelector('.books'),
 };
 
 elements.booksListElement.addEventListener('click', event => {
@@ -26,7 +26,6 @@ elements.booksListElement.addEventListener('click', event => {
 
   getBookInfo(cardBookId);
 });
-
 
 async function getBookInfo(id) {
   const BASE_URL = 'https://books-backend.p.goit.global/books/';
@@ -66,11 +65,11 @@ function marcapModal(data) {
                     <ul class="modal-list">
                         <li class="modal-item"><a href="${data.buy_links[0].url}" target="_blank" rel="noopener noreferrer nofollow"
                                 class="modal-link">
-                                <img src="../images/image1.png" alt="" class="modal-icon amazone-js">
+                                <img src="../images/amazon_logo.jpg" alt="" class="modal-icon amazone-js">
                             </a></li>
                         <li class="modal-item"><a href="${data.buy_links[1].url}" target="_blank" rel="noopener noreferrer nofollow"
                                 class="modal-link">
-                                <img src="../images/image1(1).png" alt="" class="modal-icon">
+                                <img src="../images/apple_books.jpg" alt="" class="modal-icon">
 
                             </a></li>
                     </ul>
@@ -107,25 +106,6 @@ function escCloseModal(e) {
 }
 
 //====================Добавление товара в корзину================
-
-// function addBookToList(book) {
-//   // console.log(book);
-//   const booksInList = getBooksInList();
-//   booksInList[book._id] = book;
-
-//   saveBooksInList(booksInList);
-//   changeTextBtn(book._id);
-// }
-
-// function removeBookFromList(book) {
-//   const booksInList = getBooksInList();
-//   // console.log(booksInList);
-//   if (booksInList[book._id]) {
-//     delete booksInList[book._id];
-//     saveBooksInList(booksInList);
-//   }
-//   changeTextBtn(book._id);
-// }
 
 function addBookToList(book) {
   console.log(book);
@@ -169,6 +149,7 @@ function changeTextBtn(id) {
 function removeBookFromList(id) {
   const booksInList = getBooksInList();
   const updatedBooksList = booksInList.filter(book => book._id !== id);
+  console.log(updatedBooksList);
   saveBooksInList(updatedBooksList);
 
   changeTextBtn(id);
