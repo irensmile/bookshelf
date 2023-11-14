@@ -30,7 +30,6 @@ async function getBookInfo(id) {
   const BASE_URL = 'https://books-backend.p.goit.global/books/';
   try {
     const respons = await axios(BASE_URL + id);
-
     const bookData = respons.data;
 
     marcapModal(bookData);
@@ -42,7 +41,7 @@ async function getBookInfo(id) {
     changeTextBtn(bookData._id);
 
     elements.removeBtn.addEventListener('click', () =>
-      removeBookFromList(bookData)
+      removeBookFromList(bookData._id)
     );
   } catch (error) {
     console.log(error);
@@ -107,25 +106,43 @@ function escCloseModal(e) {
 
 //====================Добавление товара в корзину================
 
-function addBookToList(book) {
-  const booksInList = getBooksInList();
-  booksInList[book._id] = book;
-  saveBooksInList(booksInList);
-  changeTextBtn(book._id);
-}
+// function addBookToList(book) {
+//   // console.log(book);
+//   const booksInList = getBooksInList();
+//   booksInList[book._id] = book;
 
-function removeBookFromList(book) {
+//   saveBooksInList(booksInList);
+//   changeTextBtn(book._id);
+// }
+
+// function removeBookFromList(book) {
+//   const booksInList = getBooksInList();
+//   // console.log(booksInList);
+//   if (booksInList[book._id]) {
+//     delete booksInList[book._id];
+//     saveBooksInList(booksInList);
+//   }
+//   changeTextBtn(book._id);
+// }
+
+function addBookToList(book) {
+  console.log(book);
   const booksInList = getBooksInList();
+  const isBookInList = booksInList.some(
+    existingBook => existingBook._id === book._id
+  );
   console.log(booksInList);
-  if (booksInList[book._id]) {
-    delete booksInList[book._id];
+  if (!isBookInList) {
+    booksInList.push(book);
+    console.log(booksInList);
     saveBooksInList(booksInList);
   }
+
   changeTextBtn(book._id);
 }
 
 function getBooksInList() {
-  return JSON.parse(localStorage.getItem('booksInList')) || {};
+  return JSON.parse(localStorage.getItem('booksInList')) ?? [];
 }
 
 function saveBooksInList(booksInList) {
@@ -133,20 +150,24 @@ function saveBooksInList(booksInList) {
 }
 
 function changeTextBtn(id) {
-  try {
-    const booksInList = JSON.parse(localStorage.getItem('booksInList')) || {};
+  const booksInList = getBooksInList();
+  const isBookInList = booksInList.some(book => book._id === id);
 
-    if (booksInList[id]) {
-      elements.addBtn.style.display = 'none';
-      elements.removeBtn.style.display = 'block';
-      elements.modalText.style.display = 'block';
-    } else {
-      elements.addBtn.style.display = 'block';
-      elements.removeBtn.style.display = 'none';
-      elements.modalText.style.display = 'none';
-    }
-  } catch (error) {
-    console.log(error);
+  if (isBookInList) {
+    elements.addBtn.style.display = 'none';
+    elements.removeBtn.style.display = 'block';
+    elements.modalText.style.display = 'block';
+  } else {
+    elements.addBtn.style.display = 'block';
+    elements.removeBtn.style.display = 'none';
+    elements.modalText.style.display = 'none';
   }
 }
-// ===========================================
+
+function removeBookFromList(id) {
+  const booksInList = getBooksInList();
+  const updatedBooksList = booksInList.filter(book => book._id !== id);
+  saveBooksInList(updatedBooksList);
+
+  changeTextBtn(id);
+}
