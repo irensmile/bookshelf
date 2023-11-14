@@ -54,6 +54,10 @@
 
 .info {
   margin-left: 14px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 
 .list {
@@ -63,11 +67,18 @@
   @media screen and (min-width: 768px) {
     margin-left: 32px;
     margin-right: 32px;
-}
+  }
   @media screen and (min-width: 1200px) {
   margin-left: 40px;
   margin-right: 24px;
+  }
 }
+
+.info-author-socials{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .card-item {
@@ -229,19 +240,17 @@ border-radius: 8px;
 }
 
 .social-icon-book {
-  position: absolute;
-  right: 24px;
-  bottom: 24px;
   width: 28px;
-  height: 27px;
+  height: 100%;
+}
+.socials_list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .social-icon-amazon {
-  position: absolute;
-  bottom: 24px;
-  right: 24px;
-
-  width: 48px;
+  width: 28px;
   height: 15px;
   margin-bottom: 0px;
   margin-right: 6px;
@@ -276,6 +285,12 @@ social-icon-amazon:hover {
     margin-left: 355px;
     margin-right: 356px;
   }
+}
+
+.book-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .shopping-books {
