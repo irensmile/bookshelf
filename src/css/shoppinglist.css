@@ -1,6 +1,12 @@
 .container {
   width: 100%;
   margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+
+  /* position: absolute;
+  top: 70px;
+  right: 20px; */
 
   @media screen and (min-width: 480px) {
       width: 480px;
@@ -8,14 +14,18 @@
 
   @media screen and (min-width: 768px) {
       width: 768px;
+      /* position: absolute;
+    top: 80px;
+    right: 8px */
   }
 
   @media screen and (min-width: 1200px) {
       width: 1200px;
+
   }
 }
 
-.is-hidden {
+.hidden {
     position: absolute;
     white-space: nowrap;
     width: 1px;
@@ -26,12 +36,14 @@
     clip: rect(0 0 0 0);
     clip-path: inset(50%);
     margin: -1px;
+
 }
 
 .img {
     width: 100px;
     height: 142px;
     object-fit: cover;
+    border-radius: 8px;
 
     @media screen and (min-width: 768px) {
       width: 116px;
@@ -59,8 +71,8 @@
   padding: 14px;
 
   border-radius: 16px;
-  border: 2px solid #4F2EE8;
-  background: #fcfcfc;
+  border: 2px solid var(--same-blue);
+  background: var(--secondary-color);
 
   @media screen and (min-width: 768px) {
     width: 704px;
@@ -68,6 +80,10 @@
 }
   @media screen and (min-width: 1200px) {
     width: 996px;
+    height: 213px;
+
+    margin-right: 0;
+    margin-left: auto;
 }
 
 }
@@ -95,7 +111,7 @@
   font-weight: 400;
   font-size: 12px;
   line-height: 1.16;
-  color: #B4AFAF;
+  color: var(--light-gray-text);
 
   @media screen and (min-width: 768px) {
     margin-bottom: 14px;
@@ -124,10 +140,11 @@ color: var(--primary-color);
   font-family: 'Italic';
   font-size: 12px;
   line-height: 1.16;
-  color: #B4AFAF;
+  color: var(--light-gray-text);
 
   @media screen and (min-width: 768px) {
     margin-bottom: 10px;
+
   }
 }
 
@@ -140,19 +157,15 @@ color: var(--primary-color);
   min-width: 380px;
 
   margin-bottom: 120px;
-  color: black;
+  color: var(--primary-color);
 
-  @media screen and (min-width:768px) {
+  @media screen and (min-width: 768px) {
     font-size: 48px;
     line-height: 1.08;
 
     margin-left: 32px;
     margin-bottom: 140px;
   }
-
-  @media screen and (min-width: 1200px) {
-}
-
 }
 
 .title {
@@ -161,28 +174,26 @@ margin-bottom: 40px;
 margin-left: 20px;
 margin-right: 162px;
 
-color: #4F2EE8;
+color: var(--same-blue);
+
+@media screen and (min-width: 1200px) {
+  margin-right: 728px;
+}
+
 }
 
 .booksimg {
 display: flex;
 align-items: center;
 justify-content: center;
-}
-
-.shooping-message {
-font-family: 'DM Sans';
-font-size: 14px ;
-text-align: center;
-margin-bottom: 14px;
-
+border-radius: 8px;
 }
 
 .btn-delete {
   display: flex;
   position: absolute;
-  border: 2px solid #4F2EE8;
-  background-color: #4F2EE8;
+  border: 2px solid var(--same-blue);
+  background-color: var(--same-blue);
   top: 14px;
   right: 14px;
 
@@ -203,4 +214,49 @@ margin-bottom: 14px;
   bottom: 14px;
   width: 32px;
   height: 11px;
+}
+
+.shopping-message {
+  font-family: 'DM Sans';
+  font-size: 14px ;
+  text-align: center;
+  line-height: 1.28;
+
+  margin-top: 120px;
+  margin-bottom: 14px;
+  margin-right: 65.5px;
+  margin-left: 65.5px;
+
+}
+
+.shopping-books {
+  width: 265px;
+  height: 198px;
+  margin-left: 55px;
+  margin-right: 55px;
+  margin-bottom: 302px;
+
+}
+
+.amazon_logo {
+  position: absolute;
+  bottom: 0px;
+  right: 24px;
+
+  width: 48px;
+  height: 15px;
+  margin-bottom: 0px;
+  margin-left: 8px;
+}
+
+book-icon {
+width: 16px;
+height: 16px;
+right: 0px;
+visibility: visible;
+}
+
+.position {
+  position: relative;
+  top: -460px;
 }
