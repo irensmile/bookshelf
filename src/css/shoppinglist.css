@@ -257,6 +257,6 @@ visibility: visible;
 }
 
 .position {
-  position: relative;
-  top: -460px;
+  /* position: relative; 
+  top: -460px; */
 }
