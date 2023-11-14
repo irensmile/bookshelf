@@ -25,10 +25,15 @@
     margin-bottom: 40px;
 }
 
-.books-container-multi{
+.books-container-multi {
     flex-wrap: wrap;
 }
-.book-name{
+
+.book-pic {
+    pointer-events: none;
+}
+
+.book-name {
     font-family: DM Sans;
     color: var(--primary-color);
     font-size: 16px;
@@ -38,9 +43,10 @@
     /* 112.5% */
     letter-spacing: -0.64px;
     text-transform: uppercase;
-
+    pointer-events: none;
 }
-.book-author{
+
+.book-author {
     color: var(--light-gray-text);
     font-family: DM Sans;
     font-size: 12px;
@@ -49,7 +55,9 @@
     line-height: 14px;
     /* 116.667% */
     letter-spacing: -0.48px;
+    pointer-events: none;
 }
+
 .books-list-name {
     color: var(--light-gray-text);
 
@@ -76,7 +84,7 @@
     line-height: 18px;
     letter-spacing: -0.14px;
     text-transform: uppercase;
-    background-color:var(--secondary-color);
+    background-color: var(--secondary-color);
     padding-left: 28px;
     padding-right: 28px;
     padding-top: 14px;
@@ -94,7 +102,7 @@
     white-space: nowrap;
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
         color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-        justify-content: flex-end;
+    justify-content: flex-end;
 }
 
 .books-btn:hover {
@@ -108,7 +116,8 @@
     height: 256px;
     margin-top: 18px;
     margin-bottom: 14px;
-    border: 1px solid #FFFFFF;;
+    border: 1px solid #FFFFFF;
+    ;
 }
 
 
