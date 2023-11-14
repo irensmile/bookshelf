@@ -74,7 +74,7 @@
   }
   .menu-link.active {
     padding: 8px 16px;
-    border-radius: 36px;
+       border-radius: 36px;
     background: var(--accent-color);
   }
 
@@ -269,10 +269,10 @@
   }
   .menu-link:hover,
   .menu-link:focus {
-    margin-top: 19px;
-    margin-bottom: 19px;
+   
     border-radius: 36px;
-    background: var(--accent-color);
+    background: var(--accent-color);transform: translateY(-2px);
+
   }
   .arrow-right {
     position: absolute;

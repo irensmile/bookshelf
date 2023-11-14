@@ -13,9 +13,10 @@ const elements = {
   removeBtn: document.querySelector('.remove'),
   openListBtn: document.querySelector('.open-list'),
   modalText: document.querySelector('.modal-add-text'),
+  booksListElement: document.querySelector('.books')
 };
 
-document.querySelector('.books').addEventListener('click', event => {
+elements.booksListElement.addEventListener('click', event => {
   let cardBookId = null;
   if (event.target.classList.contains('book-block'))
     cardBookId = event.target.dataset.book;
@@ -25,6 +26,7 @@ document.querySelector('.books').addEventListener('click', event => {
 
   getBookInfo(cardBookId);
 });
+
 
 async function getBookInfo(id) {
   const BASE_URL = 'https://books-backend.p.goit.global/books/';
