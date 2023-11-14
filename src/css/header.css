@@ -15,6 +15,9 @@
     justify-content: space-between;
     align-items: center;
   }
+ .header-logo {
+  fill: var(--dark-logo);
+ }
   .menu-link.mobile {
     color: var(--same-white);
     padding: 0;
@@ -76,6 +79,9 @@
     padding: 8px 16px;
        border-radius: 36px;
     background: var(--accent-color);
+  }
+  .bucket-icon {
+    fill: var(--primary-color);
   }
 
   /****Toggle****/
@@ -271,7 +277,8 @@
   .menu-link:focus {
    
     border-radius: 36px;
-    background: var(--accent-color);transform: translateY(-2px);
+    background: var(--accent-color);
+    transform: translateY(-2px);
 
   }
   .arrow-right {
