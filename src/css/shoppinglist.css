@@ -313,22 +313,6 @@ social-icon-amazon:hover {
 }
 
 .position {
-  position: relative;
-  top: -450px;
-
-  @media screen and (min-width: 768px) {
-    top: -470px;
-
-  }
-
-  @media screen and (min-width: 1200px) {
-    left: 235px;
-    /* margin-left: 40px;
-    margin-right: 24px; */
-  }
-
-  @media screen and (min-width: 1440px) {
-    left: 400px;
-  }
+  /* position: relative;
+  top: -460px; */
 }
-
