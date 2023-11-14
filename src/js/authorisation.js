@@ -19,15 +19,13 @@ document.addEventListener('DOMContentLoaded', function () {
   signupLink.addEventListener('click', function (event) {
     event.preventDefault();
     updateButtonText('Sign up');
-    signupForm.style.display = 'block';
-    signinForm.style.display = 'none';
+    
   });
 
   signinLink.addEventListener('click', function (event) {
     event.preventDefault();
     updateButtonText('Sign in');
-    signinForm.style.display = 'block';
-    signupForm.style.display = 'none';
+    
   });
 
   signupForm.addEventListener('submit', function (event) {
