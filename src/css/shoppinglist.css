@@ -4,10 +4,6 @@
   display: flex;
   flex-wrap: wrap;
 
-  /* position: absolute;
-  top: 70px;
-  right: 20px; */
-
   @media screen and (min-width: 480px) {
       width: 480px;
   }
@@ -68,7 +64,7 @@
     margin-left: 32px;
     margin-right: 32px;
 }
-@media screen and (min-width: 1200px) {
+  @media screen and (min-width: 1200px) {
   margin-left: 40px;
   margin-right: 24px;
 }
@@ -318,17 +314,21 @@ social-icon-amazon:hover {
 
 .position {
   position: relative;
-  top: -500px;
+  top: -450px;
 
   @media screen and (min-width: 768px) {
-    top: -512px;
+    top: -470px;
+
   }
 
   @media screen and (min-width: 1200px) {
-    left: 249px;
+    left: 235px;
+    /* margin-left: 40px;
+    margin-right: 24px; */
   }
 
   @media screen and (min-width: 1440px) {
     left: 400px;
   }
 }
+
