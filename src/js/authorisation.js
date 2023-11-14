@@ -19,13 +19,11 @@ document.addEventListener('DOMContentLoaded', function () {
   signupLink.addEventListener('click', function (event) {
     event.preventDefault();
     updateButtonText('Sign up');
-    
   });
 
   signinLink.addEventListener('click', function (event) {
     event.preventDefault();
     updateButtonText('Sign in');
-    
   });
 
   signupForm.addEventListener('submit', function (event) {
@@ -43,8 +41,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
     saveUserData(userData);
 
-    authModal.style.display = 'none';
+     replaceSignupButtonWithUserCircle(userData);
 
+    authModal.style.display = 'none';
     this.reset();
   });
 
@@ -63,4 +62,17 @@ document.addEventListener('DOMContentLoaded', function () {
       submitButton.textContent = action;
     }
   }
+
+  function replaceSignupButtonWithUserCircle(user) {
+    const signupButton = document.getElementById('sign-in-button-main'); 
+    signupButton.style.display = 'none';
+
+    const userCircle = document.createElement('div');
+    userCircle.classList.add('user-circle');
+    userCircle.textContent = user.name.charAt(0).toUpperCase();
+
+    const rightHeader = document.querySelector('.right-col'); 
+    rightHeader.appendChild(userCircle);
+}
 });
+
