@@ -9,7 +9,9 @@ booksImg: document.querySelector('.js-books'),
 }
 
 const BOOKS_KEY = 'booksInList'
-const books = JSON.parse(localStorage.getItem(BOOKS_KEY)) ?? [];
+var books = null;
+
+updateShoppingCart();
 
 elements.container.addEventListener('click', (event) => {
   if (event.target.classList.contains('icon-delete'))
@@ -91,13 +93,20 @@ function createBuyLinksMarkup(buyLinks) {
   ).join('');
 }
 
-if (books.length){
-  elements.booksImg.style.display = 'none';
-  elements.message.style.display = 'none';
-  elements.container.insertAdjacentHTML('afterbegin', createMarkup(books));
-} else {
-  elements.booksImg.style.visibility = 'visible';
-  elements.message.style.visibility = 'visible';
+function updateShoppingCart() {
+  books = JSON.parse(localStorage.getItem(BOOKS_KEY)) ?? [];
+  if (books.length) {
+    elements.booksImg.style.display = 'none';
+    elements.message.style.display = 'none';
+    elements.container.innerHTML = createMarkup(books);
+
+  } else {
+    elements.container.innerHTML = "";
+    elements.booksImg.style.display = "block";
+    elements.message.style.display = 'block';
+    elements.booksImg.style.visibility = 'visible';
+    elements.message.style.visibility = 'visible';
+  }
 }
 
 function handlerRemoveSingleBook(idToDelete) {
@@ -106,7 +115,9 @@ function handlerRemoveSingleBook(idToDelete) {
     localStorage.removeItem(BOOKS_KEY);
   else
     localStorage.setItem(BOOKS_KEY, JSON.stringify(updatedBooksList));
-  window.location.href = "./index.html";
+  //window.location.href = "./index.html";
+  updateShoppingCart();
+  
 }
 
 function handlerClearBasket(evt) {
