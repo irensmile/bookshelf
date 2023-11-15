@@ -1,4 +1,4 @@
-/* :root {
+:root {
     --text-color:#757575;
     --titles-text-color-first: #212121;
     --accent-color: #2196F3;
@@ -12,7 +12,8 @@
     --clients-color:#afb1b8;
     --accent-color-sec: #1a72b9;
     --bezier-timing: #fff;
-} */
+}
+
 .footer {
     background-color: #2f303a;
     padding-top: 60px;
@@ -39,7 +40,8 @@
   .footer-address__list {
     margin-top: 20px;
   }
-  
+ 
+
   .footer-address__address {
     margin-top: 20px;
     color: #ffffff;
@@ -53,9 +55,9 @@
   }
   .footer-address__address:hover,
   .footer-address__address:focus {
-    color:var(--accent-color);
-    ;
-  }
+     color: #2196F3;
+    }
+    
   .footer-address__contacts {
     color: rgba(255, 255, 255, 0.6);
     font-style: normal;
@@ -230,7 +232,7 @@
   .fsocial__link:hover,
   .fsocial__link:focus {
     fill: var(--accent-color-text);
-    background-color: var(--accent-color);
+    background-color: #2196F3;
   }
   
   .fsocial__link:hover .fsocial__icon,
