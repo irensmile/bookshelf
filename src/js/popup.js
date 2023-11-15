@@ -165,15 +165,12 @@ function escCloseModal(e) {
 // }
 
 function addBookToList(book) {
-  console.log(book);
   const booksInList = getBooksInList();
   const isBookInList = booksInList.some(
     existingBook => existingBook._id === book._id
   );
-  console.log(booksInList);
   if (!isBookInList) {
     booksInList.push(book);
-    console.log(booksInList);
     saveBooksInList(booksInList);
   }
 
