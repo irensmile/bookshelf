@@ -102,5 +102,31 @@ body {
   gap: 30px;
   flex-direction: row;
   flex-wrap: nowrap;
-  justify-content: center;
+  justify-content: space-around;
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+
+  @media screen and (min-width: 480px) {
+    max-width: 480px;
+  }
+
+  @media screen and (min-width: 768px) {
+    max-width: 768px;
+
+
+  }
+
+  @media screen and (min-width: 1200px) {
+    max-width: 1200px;
+
+  }
+
+  @media screen and (min-width: 1440px) {
+    max-width: 100%;
+  }
 }

@@ -42,7 +42,7 @@ function createMarkup(arr) {
 }
 
 function createBuyLinksMarkup(buyLinks) {
-    return buyLinks.map((buyLink) => {
+    return buyLinks.slice(0, 4).map((buyLink) => {
       let sellerLogo = null;
       let cssClass = null;
       switch (buyLink.name) {
