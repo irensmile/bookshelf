@@ -1,29 +1,4 @@
-.container {
-  width: 100%;
-  margin: 0 auto;
-  display: flex;
-  flex-wrap: wrap;
 
-  @media screen and (min-width: 480px) {
-      width: 480px;
-  }
-
-  @media screen and (min-width: 768px) {
-    width: 768px;
-
-
-  }
-
-  @media screen and (min-width: 1200px) {
-      width: 1200px;
-
-  }
-
-  @media screen and (min-width: 1440px) {
-    width: 1440px;
-
-}
-}
 
 .hidden {
     position: absolute;
@@ -328,7 +303,7 @@ social-icon-amazon:hover {
 }
 
 .position {
-  position: relative;
+  /* position: relative;*/
   top: -450px;
 
   @media screen and (min-width: 768px) {
@@ -347,3 +322,8 @@ social-icon-amazon:hover {
   }
 }
 
+@media screen and (max-width: 767px) {
+    .funds {
+      display: none;
+    }
+}
