@@ -19,7 +19,7 @@ import"./assets/scroll-up-2f72e7b4.js";const a={container:document.querySelector
     </svg>
   </button>
   
-</li>`).join("")}function d(s){return s.map(e=>{let o=null,t=null;switch(e.name){case"Amazon":{t="social-icon-amazon",o="../images/amazon_logo.jpg";break}case"Apple Books":{o="../images/apple_books.jpg",t="social-icon-book";break}default:o="../images/book.jpg",t="social-icon-book"}return`<li class = "book-icon">
+</li>`).join("")}function d(s){return s.slice(0,4).map(e=>{let o=null,t=null;switch(e.name){case"Amazon":{t="social-icon-amazon",o="../images/amazon_logo.jpg";break}case"Apple Books":{o="../images/apple_books.jpg",t="social-icon-book";break}default:o="../images/book.jpg",t="social-icon-book"}return`<li class = "book-icon">
       <a
         class=${t}
         href=${e.url}
