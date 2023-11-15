@@ -62,7 +62,6 @@ elements.addBtn.addEventListener('click', async () => {
 
 
 function markupModal(data) {
-  console.log("!", data);
   const content = `
                 <img src="${data.book_image}" alt="book cover" class="modal-img">
 
