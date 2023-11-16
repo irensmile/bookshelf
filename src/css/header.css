@@ -15,6 +15,9 @@
     justify-content: space-between;
     align-items: center;
   }
+ .header-logo {
+  fill: var(--dark-logo);
+ }
   .menu-link.mobile {
     color: var(--same-white);
     padding: 0;
@@ -76,6 +79,9 @@
     padding: 8px 16px;
        border-radius: 36px;
     background: var(--accent-color);
+  }
+  .bucket-icon {
+    fill: var(--primary-color);
   }
 
   /****Toggle****/
@@ -267,15 +273,36 @@
       gap: 24px;
     }
   }
-  .menu-link:hover,
+  /*.menu-link:hover,
   .menu-link:focus {
    
     border-radius: 36px;
-    background: var(--accent-color);transform: translateY(-2px);
+    background: var(--accent-color);
+    transform: translateY(-2px);
 
+  }*/
+  .current::after {
+    content: "";
+    position: absolute;
+    border-radius: 36px;
+    background: var(--accent-color);
+    transform: translateY(-2px);
   }
   .arrow-right {
     position: absolute;
     top: 14px;
     right: 14px;
+  }
+
+  .user-circle {
+    width: 30px;
+    height: 30px;
+    background-color: var(--same-blue);  
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;  
+    font-weight: bold;
+    margin-left: 10px;  
   }

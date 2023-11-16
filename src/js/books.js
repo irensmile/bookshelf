@@ -142,7 +142,6 @@ function populateCategoryHeader(categoryName) {
 list.addEventListener('click', async (event) => {
     // Тільки коли клікнули на кнопці, завантажуємо книги цієї категорії
     if (event.target.classList.contains('books-btn')) {
-        console.log('here');
         const selectedCategory = event.target.id;
         reloadBooksForCategory(selectedCategory);
     }

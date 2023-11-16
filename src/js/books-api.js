@@ -11,3 +11,8 @@ export async function getBooksByCategory(category) {
     const response = await axios.get(`books/category?category=${category}`);
     return response.data
 }
+
+export async function getbookDetais(bookId) {
+    const response = await axios.get(`books/${bookId}`);
+    return response.data
+}

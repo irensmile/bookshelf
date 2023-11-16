@@ -25,7 +25,6 @@
     min-width: 320px;
     max-width: 375px;
     margin: 0 auto;
-    padding: 0 20px;
     display: flex;
     flex-direction: column;
     gap: 40px;
@@ -34,7 +33,6 @@
 @media only screen and (min-width: 768px) {
 .categ-funds-container {
     max-width: 768px;
-    padding: 0 32px;
     flex-direction: row;
     gap: 32px;
     justify-content: space-between;
@@ -44,7 +42,6 @@
 @media only screen and (min-width: 1280px) {
   .categ-funds-container {
     max-width: 380px;
-    padding: 0 0 0 24px;
     margin: 0;
     flex-direction: column;
     gap: 46px;

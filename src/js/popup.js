@@ -2,10 +2,11 @@
 
 import axios from 'axios';
 import { throttle } from 'lodash';
+import { getbookDetais } from './books-api';
 
 const elements = {
   coverModal: document.querySelector('.cover-modal'),
-  modalCoverContant: document.querySelector('.modal-cover-contant'),
+  modalCoverContent: document.querySelector('.modal-cover-content'),
   closeBtn: document.querySelector('.modal-btn-close'),
   body: document.querySelector('body'),
   //====================Добавление товара в корзину================
@@ -13,7 +14,7 @@ const elements = {
   removeBtn: document.querySelector('.remove'),
   openListBtn: document.querySelector('.open-list'),
   modalText: document.querySelector('.modal-add-text'),
-  booksListElement: document.querySelector('.books')
+  booksListElement: document.querySelector('.books'),
 };
 
 elements.booksListElement.addEventListener('click', event => {
@@ -29,56 +30,92 @@ elements.booksListElement.addEventListener('click', event => {
 
 
 async function getBookInfo(id) {
-  const BASE_URL = 'https://books-backend.p.goit.global/books/';
   try {
-    const respons = await axios(BASE_URL + id);
-    const bookData = respons.data;
-
-    marcapModal(bookData);
-
-    elements.addBtn.addEventListener('click', () => addBookToList(bookData));
-
+    
+    const bookData = await getbookDetais(id);
+    // Записуємо id книжки в data tag, щоб знати, яка книга виділена
+    elements.modalCoverContent.dataset.selectedBookId = bookData._id
+    markupModal(bookData);
     openModl();
-
     changeTextBtn(bookData._id);
 
-    elements.removeBtn.addEventListener('click', () =>
-      removeBookFromList(bookData._id)
-    );
   } catch (error) {
     console.log(error);
   }
 }
 
-function marcapModal(data) {
+elements.removeBtn.addEventListener('click', () => {
+  const selectedBookId = elements.modalCoverContent.dataset.selectedBookId;
+  if (selectedBookId)
+    removeBookFromList(selectedBookId);
+});
+
+elements.addBtn.addEventListener('click', async () => {
+  const selectedBookId = elements.modalCoverContent.dataset.selectedBookId;
+  if (selectedBookId) {
+    // Нераціонально ще раз завантажувати інформацію про книгу тут
+    // Треба переробити логіку, щоб в local storage зберігати тільки id книги, а не всю інформацію
+    const bookData = await getbookDetais(selectedBookId);
+    addBookToList(bookData);
+  }
+});
+
+
+function markupModal(data) {
   const content = `
                 <img src="${data.book_image}" alt="book cover" class="modal-img">
 
                 <div class="modal-contant-box">
                     <h2 class="modal-title">${data.title}</h2>
                     <h3 class="modal-book-author">${data.author}</h3>
-                    <p class="modal-text">In a homage to Louisa May Alcott’s “Little Women,” a young man’s dark past
-                        resurfaces
-                        as
-                        he gets to the know
-                        the family
-                        of his college sweetheart.</p>
+                    <p class="modal-text">${data.description}</p>
                     <ul class="modal-list">
-                        <li class="modal-item"><a href="${data.buy_links[0].url}" target="_blank" rel="noopener noreferrer nofollow"
-                                class="modal-link">
-                                <img src="../images/image1.png" alt="" class="modal-icon amazone-js">
-                            </a></li>
-                        <li class="modal-item"><a href="${data.buy_links[1].url}" target="_blank" rel="noopener noreferrer nofollow"
-                                class="modal-link">
-                                <img src="../images/image1(1).png" alt="" class="modal-icon">
-
-                            </a></li>
+                        ${markupBuyLinks(data.buy_links)}
                     </ul>
-                </div>
-    `;
+                </div>`;
 
-  elements.modalCoverContant.innerHTML = content;
+  elements.modalCoverContent.innerHTML = content;
 }
+
+function markupBuyLinks(buyLinks) {
+  return buyLinks.map((buyLink) => {
+    let sellerLogo = null;
+    switch (buyLink.name) {
+      case 'Amazon': {
+        sellerLogo = '../images/amazon_logo.jpg';
+        break;
+      }
+      case 'Apple Books': {
+        sellerLogo = '../images/apple_books.jpg';
+        break;
+      }
+      // case 'Barnes and Nobel': {
+      //   sellerLogo = '';
+      //   break;
+      // }
+      // case 'Books-A-Million': {
+      //   sellerLogo = '';
+      //   break;
+      // }
+      // case 'BookShop': {
+      //   sellerLogo = '';
+      //   break;
+      // }
+      // case 'Indie Bound': {
+      //   sellerLogo = '';
+      //   break;
+      // }
+      default: {
+          sellerLogo = '../images/book.jpg';
+      }
+    }
+    return `<li class="modal-item">
+              <a href="${buyLink.url}" target="_blank" rel="noopener noreferrer nofollow" class="modal-link">
+              <img src=${sellerLogo} alt=${buyLink.name} class="modal-icon amazone-js"></a>
+    </li>`}
+  ).join('');
+}
+
 
 function openModl() {
   elements.coverModal.classList.add('visible-element');
@@ -128,15 +165,12 @@ function escCloseModal(e) {
 // }
 
 function addBookToList(book) {
-  console.log(book);
   const booksInList = getBooksInList();
   const isBookInList = booksInList.some(
     existingBook => existingBook._id === book._id
   );
-  console.log(booksInList);
   if (!isBookInList) {
     booksInList.push(book);
-    console.log(booksInList);
     saveBooksInList(booksInList);
   }
 
