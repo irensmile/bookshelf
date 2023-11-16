@@ -31,7 +31,8 @@ function categoriesMarkup(data) {
 }
 
 function singleCategoryMarkup(categoryName, books, isSingleCategory) {
-    let markup = !isSingleCategory ? `<div class = "books-list-name" >${categoryName}</div>` : '';
+    let markup = !isSingleCategory ? `
+    <div class = "books-list-name" >${categoryName}</div>` : '';
     markup +=  `<ul class="books-container ${isSingleCategory ? 'books-container-multi': ''}">
                     ${booksMarkup(books)}
                 </ul>`
@@ -43,7 +44,7 @@ function singleCategoryMarkup(categoryName, books, isSingleCategory) {
 function booksMarkup(books) {
     // Функція створює розмітку для списку книг
     return books.map((book) => {
-        return `<li>
+        return `<li class="book-block-two">
                 <div data-book=${book._id} class="book-block">
                     <img src="${book.book_image}" class="book-pic" width=120 heigh=240 />
                     <p class="book-name">${book.title}</p>
