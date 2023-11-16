@@ -1,13 +1,22 @@
 const homeBtn = document.getElementById('bestsellers');
 const shopPage = document.getElementById('shop-page');
+const homeDesktopLink = document.querySelector('#link-home');
+const homeShoppingLink = document.querySelector('#link-shopping');
 
-if (document.querySelector('.shopping-list-section')) {
+const currentPageName = window.location.pathname.split("/").pop();
+if (currentPageName == 'shopping.html') {
   homeBtn.classList.remove('active');
   shopPage.classList.add('active');
+  homeDesktopLink.classList.remove('active');
+  homeShoppingLink.classList.add('active');
 } else {
   homeBtn.classList.add('active');
   shopPage.classList.remove('active');
+  homeDesktopLink.classList.add('active');
+  homeShoppingLink.classList.remove('active');
 }
+
+
 const refs = {
   bookList: document.querySelector('.book-list'),
   home: document.getElementById('bestsellers'),

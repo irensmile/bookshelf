@@ -144,6 +144,7 @@ function markupBuyLinks(buyLinks) {
       }
 
       return `<li class="modal-item">
+
               <a href="${buyLink.url}" target="_blank" rel="noopener noreferrer nofollow" class="modal-link">
               <img src=${sellerLogo} alt=${buyLink.name} class="modal-icon amazone-js"></a>
     </li>`;
@@ -178,17 +179,13 @@ function escCloseModal(e) {
 }
 
 //====================Добавление товара в корзину================
-
 function addBookToList(book) {
-  console.log(book);
   const booksInList = getBooksInList();
   const isBookInList = booksInList.some(
     existingBook => existingBook._id === book._id
   );
-  console.log(booksInList);
   if (!isBookInList) {
     booksInList.push(book);
-    console.log(booksInList);
     saveBooksInList(booksInList);
   }
 

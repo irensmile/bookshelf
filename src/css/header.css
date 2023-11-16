@@ -240,6 +240,18 @@
   .box-mob-menu.active {
     display: block;
   }
+
+    @media screen and (max-width: 767px) {
+      .container-header {
+          padding: 14px 32px;
+        }
+        
+      .header {
+        padding: 0;
+      }
+
+    }
+
   @media screen and (min-width: 768px) {
     .container-header {
       padding: 14px 32px;
@@ -306,3 +318,7 @@
     font-weight: bold;
     margin-left: 10px;  
   }
+
+.logo-svg {
+    border: none
+}

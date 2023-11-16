@@ -72,6 +72,7 @@
     stroke: var(--same-blue);
     transition: fill 250ms linear, stroke 250ms linear;
     pointer-events: none;
+    stroke: var(--primary-color);
 }
 
 .modal-cover-content {
@@ -120,6 +121,7 @@
     font-weight: 400;
     font-size: 14px;
     line-height: 18px;
+    color: var(--primary-color);
 }
 
 .modal-list {
