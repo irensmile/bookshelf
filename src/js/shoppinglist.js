@@ -23,9 +23,9 @@ function createMarkup(arr) {
 <li data-id='${_id}' class='card-item'>
     <img src='${book_image}' alt ='${title}' class='img'>
     <div class="info">
-      <h2 class='shopping_title'>${title}</h2>
+      <h2 class='shopping_title description-title'>${title}</h2>
       <p class='list_name'>${list_name}</p>
-      <h3 class='desc overflow-ellipsis'>${description}</h3>
+      <h3 class='text description'>${description}</h3>
       <div class='info-author-socials'>
         <p class= 'shopping_author'>${author}</p>
         <ul class="socials_list">

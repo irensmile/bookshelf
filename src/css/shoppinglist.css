@@ -110,10 +110,25 @@
   }
 }
 
-.desc {
+.description {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.description-title {
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 16ch;
+
+}
+
+
+.text {
   margin-bottom:  16px;
-  /* white-space: nowrap; */
-  /* overflow: hidden; */
 
   font-family: 'DM Sans';
   font-weight: 400;
@@ -192,18 +207,27 @@ border-radius: 8px;
   position: absolute;
   border: 2px solid var(--same-blue);
   background-color: var(--same-white);
-  top: 24px;
-  right: 24px;
+  top: 14px;
+  right: 14px;
 
   border-radius: 50%;
-  width: 38px;
-  height: 38px;
+  width: 28px;
+  height: 28px;
   align-items: center;
   justify-content: center;
   padding: 6px;
   margin-left: 21px;
 
   cursor: pointer;
+
+  @media screen and (min-width: 768px) {
+    .btn-delete {
+      top: 24px;
+      right: 24px;
+      width: 38px;
+      height: 38px;
+    }
+  }
 }
 
 .btn-delete:hover {
@@ -266,7 +290,7 @@ social-icon-amazon:hover {
   }
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1280px) {
   .shopping-message {
     margin-left: 355px;
     margin-right: 356px;
@@ -296,7 +320,7 @@ social-icon-amazon:hover {
   }
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1280px) {
   .shopping-books {
     margin-left: 355px;
     margin-right: 356px;
