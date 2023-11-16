@@ -1,11 +1,11 @@
 import axios from 'axios';
-import Notiflix from 'notiflix'; 
 
 const BASE_URL = 'https://books-backend.p.goit.global/books/';
 const endpointList = 'category-list';
 
 async function fetchCategories() {
     try {
+      
       const response = await axios.get(BASE_URL + endpointList);
     
       if (response.status === 200) {
