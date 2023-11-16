@@ -102,10 +102,10 @@ body {
 
 .main-page-structure {
   display: flex;
-  gap: 30px;
+  /* gap: 30px; */
   flex-direction: row;
   flex-wrap: nowrap;
-  justify-content: space-around;
+  /* justify-content: space-around; */
 }
 
 .container {
@@ -118,21 +118,24 @@ body {
 }
 
   @media screen and (min-width: 375px) {
-    max-width: 375px;
+    .container {
+      width: 375px;}
   }
 
 @media screen and (min-width: 768px) {
   .container {
-    max-width: 768px;
+    width: 768px;
     padding-left: 32px;
     padding-right: 32px;
 
   }
 
   @media screen and (min-width: 1280px) {
-    max-width: 1280px;
-    padding-left: 24px;
-    padding-right: 24px;
+    .container {
+      width: 1280px;
+      padding-left: 24px;
+      padding-right: 24px;
+    }
   }
 
 }
