@@ -19,11 +19,12 @@
     height: 142px;
     object-fit: cover;
     border-radius: 8px;
-
-    @media screen and (min-width: 768px) {
-      width: 116px;
-      height: 165px;
-      margin-top: 10px;
+}
+@media screen and (min-width: 768px) {
+  .img {
+    width: 116px;
+    height: 165px;
+    margin-top: 10px;
   }
 }
 
@@ -39,16 +40,21 @@
   margin-left: 20px;
   margin-right: 20px;
 
-  @media screen and (min-width: 768px) {
+
+}
+@media screen and (min-width: 768px) {
+  .list{
     margin-left: 32px;
     margin-right: 32px;
   }
-  @media screen and (min-width: 1200px) {
-  margin-left: 40px;
-  margin-right: 24px;
-  }
 }
 
+@media screen and (min-width: 1200px) {
+  .list {
+    margin-left: 40px;
+    margin-right: 24px;
+  }
+}
 .info-author-socials{
   display: flex;
   flex-direction: row;
@@ -69,23 +75,28 @@
   border: 2px solid var(--same-blue);
   background: var(--secondary-color);
 
-  @media screen and (min-width: 768px) {
+}
+@media screen and (min-width: 768px) {
+  .card-item {
     width: 704px;
     height: 213px;
+  }
 }
-  @media screen and (min-width: 1200px) {
+
+@media screen and (min-width: 1200px) {
+  .card-item {
     width: 930px;
     height: 213px;
 
     margin-right: 0;
     margin-left: auto;
+  }
 }
 
 @media screen and (min-width: 1440px) {
-  width: 996px;
-
-}
-
+  .card-item {
+    width: 996px;
+  }
 }
 
 
@@ -98,10 +109,11 @@
   line-height: 1.12;
 
   color: var(--primary-color);
-
-  @media screen and (min-width: 768px) {
-    margin-top: 10px;
 }
+@media screen and (min-width: 768px) {
+  .shopping_title {
+    margin-top: 10px;
+  }
 }
 
 .list_name {
@@ -112,10 +124,11 @@
   font-size: 12px;
   line-height: 1.16;
   color: var(--light-gray-text);
-
-  @media screen and (min-width: 768px) {
-    margin-bottom: 14px;
 }
+@media screen and (min-width: 768px) {
+  .list_name {
+    margin-bottom: 14px;
+  }
 }
 
 .desc {
@@ -128,23 +141,24 @@
   font-size: 14px;
   line-height: 1.28;
 
-color: var(--primary-color);
-
+  color: var(--primary-color);
+}
 @media screen and (min-width: 768px) {
-  margin-bottom: 48px;
-}
+  .desc {
+    margin-bottom: 48px;
+  }
 }
 
 
-.shopping_author{
+.shopping_author {
   font-family: 'Italic';
   font-size: 12px;
   line-height: 1.16;
   color: var(--light-gray-text);
-
-  @media screen and (min-width: 768px) {
+}
+@media screen and (min-width: 768px) {
+  .shopping_author {
     margin-bottom: 10px;
-
   }
 }
 
@@ -158,22 +172,25 @@ color: var(--primary-color);
 
   margin-bottom: 120px;
   color: var(--primary-color);
+}
 
-  @media screen and (min-width: 768px) {
+@media screen and (min-width: 768px) {
+  .title-part,
+    .title {
     font-size: 48px;
     line-height: 1.08;
-
     margin-left: 32px;
     margin-bottom: 40px;
-
   }
-  @media screen and (min-width: 1200px) {
+}
+
+@media screen and (min-width: 1200px) {
+.title-part,
+  .title {
     font-size: 48px;
     line-height: 1.08;
-
     margin-left: 32px;
     margin-bottom: 40px;
-
   }
 }
 
@@ -184,7 +201,6 @@ margin-left: 20px;
 margin-right: 162px;
 
 color: var(--same-blue);
-
 
 }
 
@@ -248,15 +264,18 @@ social-icon-amazon:hover {
   margin-right: 65.5px;
   margin-left: 65.5px;
   width: 244px;
+}
 
-  @media screen and (min-width: 768px) {
+@media screen and (min-width: 768px) {
+  .shopping-message {
     margin-left: 210px;
     margin-right: 209px;
     margin-top: 140px;
   }
+}
 
-  @media screen and (min-width: 1200px) {
-
+@media screen and (min-width: 1200px) {
+  .shopping-message {
     margin-left: 355px;
     margin-right: 356px;
   }
@@ -274,17 +293,19 @@ social-icon-amazon:hover {
   margin-left: 55px;
   margin-right: 55px;
   margin-bottom: 302px;
-
-  @media screen and (min-width: 768px) {
+}
+@media screen and (min-width: 768px) {
+  .shopping-books {
     width: 322px;
     height: 241px;
     margin-left: 210px;
     margin-right: 209px;
     margin-bottom: 140px;
   }
+}
 
-  @media screen and (min-width: 1200px) {
-
+@media screen and (min-width: 1200px) {
+  .shopping-books {
     margin-left: 355px;
     margin-right: 356px;
     margin-bottom: 157px;
@@ -300,26 +321,6 @@ social-icon-amazon:hover {
   height: 15px;
   margin-bottom: 0px;
   margin-left: 8px;
-}
-
-.position {
-  /* position: relative;*/
-  top: -450px;
-
-  @media screen and (min-width: 768px) {
-    top: -470px;
-
-  }
-
-  @media screen and (min-width: 1200px) {
-    left: 235px;
-    /* margin-left: 40px;
-    margin-right: 24px; */
-  }
-
-  @media screen and (min-width: 1440px) {
-    left: 400px;
-  }
 }
 
 @media screen and (max-width: 767px) {

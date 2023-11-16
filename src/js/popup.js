@@ -78,7 +78,7 @@ function markupModal(data) {
 }
 
 function markupBuyLinks(buyLinks) {
-  return buyLinks.map((buyLink) => {
+  return buyLinks.slice(0,2).map((buyLink) => {
     let sellerLogo = null;
     switch (buyLink.name) {
       case 'Amazon': {
@@ -92,19 +92,7 @@ function markupBuyLinks(buyLinks) {
       // case 'Barnes and Nobel': {
       //   sellerLogo = '';
       //   break;
-      // }
-      // case 'Books-A-Million': {
-      //   sellerLogo = '';
-      //   break;
-      // }
-      // case 'BookShop': {
-      //   sellerLogo = '';
-      //   break;
-      // }
-      // case 'Indie Bound': {
-      //   sellerLogo = '';
-      //   break;
-      // }
+      // } ...
       default: {
           sellerLogo = '../images/book.jpg';
       }
@@ -142,27 +130,6 @@ function escCloseModal(e) {
     document.removeEventListener('keydown', escCloseModal);
   }
 }
-
-//====================Добавление товара в корзину================
-
-// function addBookToList(book) {
-//   // console.log(book);
-//   const booksInList = getBooksInList();
-//   booksInList[book._id] = book;
-
-//   saveBooksInList(booksInList);
-//   changeTextBtn(book._id);
-// }
-
-// function removeBookFromList(book) {
-//   const booksInList = getBooksInList();
-//   // console.log(booksInList);
-//   if (booksInList[book._id]) {
-//     delete booksInList[book._id];
-//     saveBooksInList(booksInList);
-//   }
-//   changeTextBtn(book._id);
-// }
 
 function addBookToList(book) {
   const booksInList = getBooksInList();

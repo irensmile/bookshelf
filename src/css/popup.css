@@ -73,6 +73,7 @@
 .modal-btn-icon {
     transition: fill 250ms linear, stroke 250ms linear;
     pointer-events: none;
+    stroke: var(--primary-color);
 }
 
 .modal-btn-icon:hover {
@@ -110,6 +111,7 @@
     font-weight: 700;
     font-size: 16px;
     line-height: 18px;
+    color: var(--primary-color);
 
 }
 
@@ -119,7 +121,7 @@
     font-style: italic;
     font-size: 12px;
     line-height: 14px;
-    color: #B4AFAF;
+    color: var(--light-gray-text);
 }
 
 .modal-text {
@@ -127,6 +129,7 @@
     font-weight: 400;
     font-size: 14px;
     line-height: 18px;
+    color: var(--primary-color);
 }
 
 .modal-list {
@@ -157,6 +160,7 @@
     align-items: center;
     justify-content: center;
     margin: 0 auto;
+    color: var(--primary-color);
 }
 
 @media screen and (min-width:768px) {
