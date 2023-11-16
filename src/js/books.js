@@ -3,16 +3,23 @@ const list = document.querySelector('.books')
 const categoryList = document.querySelector('.categories-list');
 const booksCategoryName = document.querySelector("#books-category-name");
 
+const loadScreenOptions = {
+        backgroundColor: 'rgba(82,48,232, 0.85)',
+        messageColor: 'rgba(234, 198, 67, 1)',
+        svgColor: 'rgba(234, 198, 67, 1)'
+    }
 // Завантаження даних перенесено в books-api.js
 // Ця функція буде викликана при початовому завантаженні сторінки для заповнення Top Books
 loadOnStartup();
 
 async function loadOnStartup() {
+    Notiflix.Loading.circle("Loading...", loadScreenOptions);
     // Функція оголошена, як асинхронна, так як ми маємо дочекатися завантаження даних.
     const booksData = await getTopBooks();
     // після одержання даних викликаємо функцію, яка генерує html розмітка
     const markup = categoriesMarkup(booksData);
     list.insertAdjacentHTML('beforeend', markup);
+    Notiflix.Loading.remove();
 }
 
 function categoriesMarkup(data) {
@@ -100,6 +107,7 @@ categoryList.addEventListener("click", async (e) => {
 });
 
 async function reloadBooksForCategory(selectedCategory) {
+    Notiflix.Loading.circle("Loading...", loadScreenOptions);
     for (const child of categoryList.children)
         if (child.innerHTML != selectedCategory)
             child.classList.remove('is-active-item');
@@ -118,6 +126,7 @@ async function reloadBooksForCategory(selectedCategory) {
         markup = singleCategoryMarkup(selectedCategory, data, true);
     }
     list.innerHTML = markup;
+    Notiflix.Loading.remove();
     window.scrollTo({ top: 0, behavior: "smooth"})
 }
 
