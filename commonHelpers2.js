@@ -1,4 +1,4 @@
-import"./assets/scroll-up-2f72e7b4.js";const s={container:document.querySelector(".js-list"),totalQuantity:document.querySelector(".js-quantity"),clearBtn:document.querySelector(".js-clear"),pageName:document.querySelector(".js-title"),message:document.querySelector(".js-message"),booksImg:document.querySelector(".js-books")},i="booksInList";var l=null;n();s.container.addEventListener("click",o=>{o.target.classList.contains("icon-delete")&&d(o.target.parentNode.dataset.id)});function p(o){return o.map(({_id:e,book_image:t,title:a,list_name:c,description:r,author:g,buy_links:m})=>`
+import"./assets/scroll-up-f97e5f49.js";const s={container:document.querySelector(".js-list"),totalQuantity:document.querySelector(".js-quantity"),clearBtn:document.querySelector(".js-clear"),pageName:document.querySelector(".js-title"),message:document.querySelector(".js-message"),booksImg:document.querySelector(".js-books")},i="booksInList";var l=null;n();s.container.addEventListener("click",o=>{o.target.classList.contains("icon-delete")&&d(o.target.parentNode.dataset.id)});function p(o){return o.map(({_id:e,book_image:t,title:a,list_name:c,description:r,author:g,buy_links:m})=>`
 <li data-id='${e}' class='card-item'>
     <img src='${t}' alt ='${a}' class='img'>
     <div class="info">
@@ -19,7 +19,7 @@ import"./assets/scroll-up-2f72e7b4.js";const s={container:document.querySelector
     </svg>
   </button>
   
-</li>`).join("")}function u(o){return o.slice(0,4).map(e=>{let t=null,a=null;switch(e.name){case"Amazon":{a="social-icon-amazon",t="../images/amazon_logo.jpg";break}case"Apple Books":{t="../images/apple_books.jpg",a="social-icon-book";break}default:t="../images/book.jpg",a="social-icon-book"}return`<li class = "book-icon">
+</li>`).join("")}function u(o){return o.slice(0,2).map(e=>{let t=null,a=null;switch(e.name){case"Amazon":{a="social-icon-amazon",t="../images/amazon_logo.jpg";break}case"Apple Books":{t="../images/apple_books.jpg",a="social-icon-book";break}default:t="../images/book.jpg",a="social-icon-book"}return`<li class = "book-icon">
       <a
         class=${a}
         href=${e.url}

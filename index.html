@@ -12,9 +12,9 @@
   <link rel="icon" type="image/svg" href="/project-ScriptMasters14/assets/bookshelf_icon_155732-a38de9b6.svg" />
   
   <script type="module" crossorigin src="/project-ScriptMasters14/commonHelpers.js"></script>
-  <link rel="modulepreload" crossorigin href="/project-ScriptMasters14/assets/scroll-up-2f72e7b4.js">
+  <link rel="modulepreload" crossorigin href="/project-ScriptMasters14/assets/scroll-up-f97e5f49.js">
   <link rel="modulepreload" crossorigin href="/project-ScriptMasters14/assets/vendor-a9f52953.js">
-  <link rel="stylesheet" href="/project-ScriptMasters14/assets/index-7b8923e6.css">
+  <link rel="stylesheet" href="/project-ScriptMasters14/assets/index-e1e00b46.css">
 </head>
 
 <body>
@@ -23,24 +23,40 @@
   <div class="container container-header">
     <div class="left-col">
       <a href="./index.html" class="logo" aria-label="Logo link on page">
-        <svg class="header" width="109" height="28" aria-label="Page Logo">
+        <svg
+          class="header logo-svg"
+          width="109"
+          height="28"
+          aria-label="Page Logo"
+        >
           <use href="/project-ScriptMasters14/assets/icons-3e5adae9.svg#icon-logo"></use>
         </svg>
       </a>
 
       <ul class="menu">
         <li class="menu-item home">
-          <a href="./index.html" class="menu-link  current" aria-label="Home">Home</a>
+          <a
+            href="./index.html"
+            class="menu-link"
+            aria-label="Home"
+            id="link-home"
+            >Home</a
+          >
         </li>
-        <li class="menu-item  current">
+        <li class="menu-item current">
           <a
             href="./shopping.html"
             class="menu-link"
             aria-label="Shopping list"
-            
+            id="link-shopping"
           >
             Shopping list
-            <svg class="bucket-icon" width="20" height="20" aria-label="Basket icon">
+            <svg
+              class="bucket-icon"
+              width="20"
+              height="20"
+              aria-label="Basket icon"
+            >
               <use href="/project-ScriptMasters14/assets/icons-3e5adae9.svg#icon-basket"></use>
             </svg>
           </a>
@@ -50,14 +66,20 @@
     <div class="right-col">
       <div class="box-toggle">
         <div class="circle">
-          <svg class="white-circle" width="18" height="18" aria-label="Toggle icon"> <use href="/project-ScriptMasters14/assets/icons-3e5adae9.svg#icon-toggle"></use>  </svg>
+          <svg
+            class="white-circle"
+            width="18"
+            height="18"
+            aria-label="Toggle icon"
+          >
+            <use href="/project-ScriptMasters14/assets/icons-3e5adae9.svg#icon-toggle"></use>
+          </svg>
         </div>
       </div>
 
+      <!--    Registration button  -->
 
-     <!--    Registration button  -->
-
-     <button
+      <button
         type="button"
         class="avatar-button btn-main-signup"
         id="sign-in-button-main"
@@ -71,7 +93,6 @@
             class="icon"
             aria-label="Sign in button icon"
             onclick="openAuthModal(document.getElementById('authModal'))"
-
           >
             <use href="/project-ScriptMasters14/assets/icons-3e5adae9.svg#icon-arrow-right"></use>
           </svg>
@@ -105,10 +126,9 @@
     </div>
   </div>
   <div class="box-mob-menu">
+    <!--Registration button -->
 
-   <!--Registration button -->
-   
-   <button
+    <button
       type="button"
       class="mob-avatar"
       id="sign-in-button"
@@ -116,12 +136,17 @@
     >
       <span class="box-sign-up">
         Sign up
-        <svg width="23" height="26" class="icon" aria-label="Sign in button icon">
+        <svg
+          width="23"
+          height="26"
+          class="icon"
+          aria-label="Sign in button icon"
+        >
           <use href="/project-ScriptMasters14/assets/icons-3e5adae9.svg#icon-arrow-right"></use>
         </svg>
       </span>
     </button>
-  
+
     <ul class="mobile-menu-navigation">
       <li class="mobile-menu-nav-item">
         <a
@@ -325,7 +350,7 @@
   <div class="modal">
     <button class="modal-btn-close">
       <svg width="12" height="12" class="modal-btn-icon">
-        <use href="./Icon.svg"></use>
+        <use href="/project-ScriptMasters14/assets/icons-3e5adae9.svg#icon-close"></use>
       </svg>
     </button>
 
@@ -338,8 +363,8 @@
     </div>
 
     <div class="modal-btn-cover">
-      <button tipe="button" class="modal-btn add">Add to shopping list</button>
-      <button tipe="button" class="modal-btn remove">
+      <button type="button" class="modal-btn add">Add to shopping list</button>
+      <button type="button" class="modal-btn remove">
         Remove from the shopping list
       </button>
       <!-- <a href="#shoppinglist" class="modal-btn open-list ">Go to basket</a> -->
