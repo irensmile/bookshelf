@@ -5,7 +5,6 @@
 */
 
 .categ-funds {
-    padding-top: 40px;
     padding-bottom: 40px;
 }
 
@@ -72,6 +71,10 @@
   .categories {
     max-width: 356px;
   }
+}
+
+.categ-item {
+  cursor: pointer;
 }
 
 .categ-item:not(:last-child) {
