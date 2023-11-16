@@ -45,40 +45,33 @@
 }
 
 .modal-btn-close {
-    border-radius: 50%;
-    border: 1px solid var(--location-text-color);
-    background-color: transparent;
     position: absolute;
+    background-color: transparent;
+    border-radius: 50%;
+    padding: 0;
     top: 12px;
     right: 12px;
     width: 24px;
     height: 24px;
+    border: 1px solid var(--same-blue);
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0;
+    width: 22px;
+    height: 22px;
     transition: box-shadow 250ms linear, height 100ms linear, width 100ms linear;
 }
 
 .modal-btn-close:hover {
-    box-shadow: 0px 0px 5px 1px var(--location-text-color), 0px 0px 3px 0px #7f70c5 inset;
-}
-
-.modal-btn-close:active {
-    box-shadow: 0px 0px 7px 2px var(--location-text-color), 0px 0px 3px 1px #7f70c5 inset;
+    box-shadow: 0px 0px 7px 2px var(--same-blue), 0px 0px 3px 1px #7f70c5 inset;
     width: 25px;
     height: 25px;
 }
 
 .modal-btn-icon {
+    stroke: var(--same-blue);
     transition: fill 250ms linear, stroke 250ms linear;
     pointer-events: none;
-}
-
-.modal-btn-icon:hover {
-    fill: var(--location-text-color);
-    stroke: var(--location-text-color);
-
 }
 
 .modal-cover-content {
@@ -110,7 +103,7 @@
     font-weight: 700;
     font-size: 16px;
     line-height: 18px;
-
+    color: var(--primary-color);
 }
 
 .modal-book-author {
@@ -119,7 +112,7 @@
     font-style: italic;
     font-size: 12px;
     line-height: 14px;
-    color: #B4AFAF;
+    color: var(--light-gray-text);
 }
 
 .modal-text {
@@ -141,11 +134,11 @@
 }
 
 .modal-icon:hover {
-    filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, .35))
+    filter: drop-shadow(0px 3px 3px var(--hover))
 }
 
 .modal-btn {
-    border: 2px solid var(--location-text-color);
+    border: 2px solid var(--same-blue);
     padding: 14px 28px;
     border-radius: 40px;
     background-color: transparent;
@@ -157,6 +150,7 @@
     align-items: center;
     justify-content: center;
     margin: 0 auto;
+    color: var(--primary-color);
 }
 
 @media screen and (min-width:768px) {

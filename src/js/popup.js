@@ -15,6 +15,7 @@ const elements = {
   openListBtn: document.querySelector('.open-list'),
   modalText: document.querySelector('.modal-add-text'),
   booksListElement: document.querySelector('.books'),
+  body: document.querySelector('body'),
 };
 
 elements.booksListElement.addEventListener('click', event => {
@@ -28,17 +29,14 @@ elements.booksListElement.addEventListener('click', event => {
   getBookInfo(cardBookId);
 });
 
-
 async function getBookInfo(id) {
   try {
-    
     const bookData = await getbookDetais(id);
     // Записуємо id книжки в data tag, щоб знати, яка книга виділена
-    elements.modalCoverContent.dataset.selectedBookId = bookData._id
+    elements.modalCoverContent.dataset.selectedBookId = bookData._id;
     markupModal(bookData);
     openModl();
     changeTextBtn(bookData._id);
-
   } catch (error) {
     console.log(error);
   }
@@ -46,8 +44,7 @@ async function getBookInfo(id) {
 
 elements.removeBtn.addEventListener('click', () => {
   const selectedBookId = elements.modalCoverContent.dataset.selectedBookId;
-  if (selectedBookId)
-    removeBookFromList(selectedBookId);
+  if (selectedBookId) removeBookFromList(selectedBookId);
 });
 
 elements.addBtn.addEventListener('click', async () => {
@@ -60,10 +57,11 @@ elements.addBtn.addEventListener('click', async () => {
   }
 });
 
-
 function markupModal(data) {
   const content = `
-                <img src="${data.book_image}" alt="book cover" class="modal-img">
+                <img src="${
+                  data.book_image
+                }" alt="book cover" class="modal-img">
 
                 <div class="modal-contant-box">
                     <h2 class="modal-title">${data.title}</h2>
@@ -78,44 +76,80 @@ function markupModal(data) {
 }
 
 function markupBuyLinks(buyLinks) {
-  return buyLinks.map((buyLink) => {
-    let sellerLogo = null;
-    switch (buyLink.name) {
-      case 'Amazon': {
-        sellerLogo = '../images/amazon_logo.jpg';
-        break;
+  return buyLinks
+    .map(buyLink => {
+      let sellerLogo = null;
+      if (elements.body.classList.contains('dark-theme')) {
+        switch (buyLink.name) {
+          case 'Amazon': {
+            sellerLogo = '../images/amazon-darck.png';
+            break;
+          }
+          case 'Apple Books': {
+            sellerLogo = '../images/apple.png';
+            break;
+          }
+          // case 'Barnes and Nobel': {
+          //   sellerLogo = '';
+          //   break;
+          // }
+          // case 'Books-A-Million': {
+          //   sellerLogo = '';
+          //   break;
+          // }
+          // case 'BookShop': {
+          //   sellerLogo = '';
+          //   break;
+          // }
+          // case 'Indie Bound': {
+          //   sellerLogo = '';
+          //   break;
+          // }
+          // =================
+          default: {
+            return '';
+          }
+        }
+      } else {
+        switch (buyLink.name) {
+          case 'Amazon': {
+            sellerLogo = '../images/amazon.png';
+            break;
+          }
+          case 'Apple Books': {
+            sellerLogo = '../images/apple.png';
+            break;
+          }
+          // case 'Barnes and Nobel': {
+          //   sellerLogo = '';
+          //   break;
+          // }
+          // case 'Books-A-Million': {
+          //   sellerLogo = '';
+          //   break;
+          // }
+          // case 'BookShop': {
+          //   sellerLogo = '';
+          //   break;
+          // }
+          // case 'Indie Bound': {
+          //   sellerLogo = '';
+          //   break;
+          // }
+          // =================
+          default: {
+            return '';
+          }
+        }
       }
-      case 'Apple Books': {
-        sellerLogo = '../images/apple_books.jpg';
-        break;
-      }
-      // case 'Barnes and Nobel': {
-      //   sellerLogo = '';
-      //   break;
-      // }
-      // case 'Books-A-Million': {
-      //   sellerLogo = '';
-      //   break;
-      // }
-      // case 'BookShop': {
-      //   sellerLogo = '';
-      //   break;
-      // }
-      // case 'Indie Bound': {
-      //   sellerLogo = '';
-      //   break;
-      // }
-      default: {
-          sellerLogo = '../images/book.jpg';
-      }
-    }
-    return `<li class="modal-item">
+
+      return `<li class="modal-item">
               <a href="${buyLink.url}" target="_blank" rel="noopener noreferrer nofollow" class="modal-link">
               <img src=${sellerLogo} alt=${buyLink.name} class="modal-icon amazone-js"></a>
-    </li>`}
-  ).join('');
+    </li>`;
+    })
+    .join('');
 }
-
 
 function openModl() {
   elements.coverModal.classList.add('visible-element');
@@ -144,25 +178,6 @@ function escCloseModal(e) {
 }
 
 //====================Добавление товара в корзину================
-
-// function addBookToList(book) {
-//   // console.log(book);
-//   const booksInList = getBooksInList();
-//   booksInList[book._id] = book;
-
-//   saveBooksInList(booksInList);
-//   changeTextBtn(book._id);
-// }
-
-// function removeBookFromList(book) {
-//   const booksInList = getBooksInList();
-//   // console.log(booksInList);
-//   if (booksInList[book._id]) {
-//     delete booksInList[book._id];
-//     saveBooksInList(booksInList);
-//   }
-//   changeTextBtn(book._id);
-// }
 
 function addBookToList(book) {
   console.log(book);
