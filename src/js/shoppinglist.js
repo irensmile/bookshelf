@@ -39,7 +39,7 @@ function createMarkup(arr) {
       <use href="./images/icons.svg#icon-trash"></use>
     </svg>
   </button>
-  
+
 </li>`).join('');
 }
 
@@ -50,11 +50,11 @@ function createBuyLinksMarkup(buyLinks) {
       switch (buyLink.name) {
         case 'Amazon': {
           cssClass = "social-icon-amazon"
-          sellerLogo = '../images/amazon_logo.jpg';
+          sellerLogo = '../images/amazon_logo.svg';
           break;
         }
         case 'Apple Books': {
-          sellerLogo = '../images/apple_books.jpg';
+          sellerLogo = '../images/apple_books.svg';
           cssClass = "social-icon-book";
           break;
         }
@@ -117,7 +117,7 @@ function handlerRemoveSingleBook(idToDelete) {
     localStorage.setItem(BOOKS_KEY, JSON.stringify(updatedBooksList));
   //window.location.href = "./index.html";
   updateShoppingCart();
-  
+
 }
 
 function handlerClearBasket(evt) {
