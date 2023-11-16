@@ -20,13 +20,13 @@ elements.container.addEventListener('click', (event) => {
 
 function createMarkup(arr) {
   return arr.map(({_id, book_image, title, list_name, description, author, buy_links})=> `
-<li data-id='${_id}' class='card-item'>
-    <img src='${book_image}' alt ='${title}' class='img'>
-    <div class="info">
+<li data-id='${_id}' class='shopping-card-item'>
+    <img src='${book_image}' alt ='${title}' class='shopping-img'>
+    <div class="shopping-info">
       <h2 class='shopping_title description-title'>${title}</h2>
-      <p class='list_name'>${list_name}</p>
-      <h3 class='text description'>${description}</h3>
-      <div class='info-author-socials'>
+      <p class='shopping-list_name'>${list_name}</p>
+      <h3 class='shopping-text description'>${description}</h3>
+      <div class='shopping-socials'>
         <p class= 'shopping_author'>${author}</p>
         <ul class="socials_list">
           ${createBuyLinksMarkup(buy_links)}

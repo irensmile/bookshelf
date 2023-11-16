@@ -12,21 +12,21 @@
 
 }
 
-.img {
+.shopping-img {
     width: 100px;
     height: 142px;
     object-fit: cover;
     border-radius: 8px;
 }
 @media screen and (min-width: 768px) {
-  .img {
+  .shopping-img {
     width: 116px;
     height: 165px;
     margin-top: 10px;
   }
 }
 
-.info {
+.shopping-info {
   margin-left: 14px;
   width: 100%;
   display: flex;
@@ -34,14 +34,14 @@
   justify-content: space-around;
 }
 
-.info-author-socials{
+.shopping-socials {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
 }
 
-.card-item {
+.shopping-card-item {
   display: flex;
   position: relative;
 
@@ -56,14 +56,14 @@
 
 }
 @media screen and (min-width: 768px) {
-  .card-item {
+  .shopping-card-item {
     width: 704px;
     height: 213px;
   }
 }
 
 @media screen and (min-width: 1280px) {
-  .card-item {
+  .shopping-card-item {
     width: 900px;
     height: 213px;
 
@@ -73,7 +73,7 @@
 }
 
 @media screen and (min-width: 1440px) {
-  .card-item {
+  .shopping-card-item{
     width: 996px;
   }
 }
@@ -87,6 +87,7 @@
   font-size: 16px;
   line-height: 1.12;
 
+
   color: var(--primary-color);
 }
 @media screen and (min-width: 768px) {
@@ -95,7 +96,7 @@
   }
 }
 
-.list_name {
+.shopping-list_name {
   margin-bottom: 8px;
 
   font-family: 'DM Sans';
@@ -105,29 +106,37 @@
   color: var(--light-gray-text);
 }
 @media screen and (min-width: 768px) {
-  .list_name {
+  .shopping-list_name {
     margin-bottom: 14px;
   }
 }
 
+@media screen and (max-width: 768px) {
 .description {
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
-}
+}}
 
+@media screen and (max-width: 768px) {
 .description-title {
-
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    max-width: 16ch;
+    max-width: 14ch;
 
-}
+}}
 
+@media screen and (max-width: 768px) {
+.shopping-list_name {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 20ch;
+}}
 
-.text {
+.shopping-text {
   margin-bottom:  16px;
 
   font-family: 'DM Sans';
@@ -247,7 +256,12 @@ border-radius: 8px;
 }
 
 .social-icon-amazon {
-fill: var(--accent-color);
+  filter: grayscale(100%);
+  transition: filter 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.social-icon-amazon:hover {
+  filter: drop-shadow(0px 3px 3px var(--hover));
 }
 
 .socials_list {
@@ -284,6 +298,8 @@ social-icon-amazon:hover {
 
 @media screen and (min-width: 768px) {
   .shopping-message {
+    font-size: 18px;
+    width: 349px;
     margin-left: 210px;
     margin-right: 209px;
     margin-top: 140px;
