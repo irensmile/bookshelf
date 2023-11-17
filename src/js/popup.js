@@ -82,30 +82,13 @@ function markupBuyLinks(buyLinks) {
       if (elements.body.classList.contains('dark-theme')) {
         switch (buyLink.name) {
           case 'Amazon': {
-            sellerLogo = '../images/amazon-darck.png';
+            sellerLogo = './images/amazon_logo.svg';
             break;
           }
           case 'Apple Books': {
-            sellerLogo = '../images/apple.png';
+            sellerLogo = './images/apple_books.svg';
             break;
           }
-          // case 'Barnes and Nobel': {
-          //   sellerLogo = '';
-          //   break;
-          // }
-          // case 'Books-A-Million': {
-          //   sellerLogo = '';
-          //   break;
-          // }
-          // case 'BookShop': {
-          //   sellerLogo = '';
-          //   break;
-          // }
-          // case 'Indie Bound': {
-          //   sellerLogo = '';
-          //   break;
-          // }
-          // =================
           default: {
             return '';
           }
@@ -113,30 +96,13 @@ function markupBuyLinks(buyLinks) {
       } else {
         switch (buyLink.name) {
           case 'Amazon': {
-            sellerLogo = '../images/amazon.png';
+            sellerLogo = './images/amazon_logo.svg';
             break;
           }
           case 'Apple Books': {
-            sellerLogo = '../images/apple.png';
+            sellerLogo = './images/apple_books.svg';
             break;
           }
-          // case 'Barnes and Nobel': {
-          //   sellerLogo = '';
-          //   break;
-          // }
-          // case 'Books-A-Million': {
-          //   sellerLogo = '';
-          //   break;
-          // }
-          // case 'BookShop': {
-          //   sellerLogo = '';
-          //   break;
-          // }
-          // case 'Indie Bound': {
-          //   sellerLogo = '';
-          //   break;
-          // }
-          // =================
           default: {
             return '';
           }
