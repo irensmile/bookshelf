@@ -20,13 +20,13 @@ elements.container.addEventListener('click', (event) => {
 
 function createMarkup(arr) {
   return arr.map(({_id, book_image, title, list_name, description, author, buy_links})=> `
-<li data-id='${_id}' class='card-item'>
-    <img src='${book_image}' alt ='${title}' class='img'>
-    <div class="info">
-      <h2 class='shopping_title'>${title}</h2>
-      <p class='list_name'>${list_name}</p>
-      <h3 class='desc overflow-ellipsis'>${description}</h3>
-      <div class='info-author-socials'>
+<li data-id='${_id}' class='shopping-card-item'>
+    <img src='${book_image}' alt ='${title}' class='shopping-img'>
+    <div class="shopping-info">
+      <h2 class='shopping_title description-title'>${title}</h2>
+      <p class='shopping-list_name'>${list_name}</p>
+      <h3 class='shopping-text description'>${description}</h3>
+      <div class='shopping-socials'>
         <p class= 'shopping_author'>${author}</p>
         <ul class="socials_list">
           ${createBuyLinksMarkup(buy_links)}
@@ -39,7 +39,7 @@ function createMarkup(arr) {
       <use href="./images/icons.svg#icon-trash"></use>
     </svg>
   </button>
-  
+
 </li>`).join('');
 }
 
@@ -50,11 +50,11 @@ function createBuyLinksMarkup(buyLinks) {
       switch (buyLink.name) {
         case 'Amazon': {
           cssClass = "social-icon-amazon"
-          sellerLogo = '../images/amazon_logo.jpg';
+          sellerLogo = '../images/amazon_logo.svg';
           break;
         }
         case 'Apple Books': {
-          sellerLogo = '../images/apple_books.jpg';
+          sellerLogo = '../images/apple_books.svg';
           cssClass = "social-icon-book";
           break;
         }
@@ -117,7 +117,7 @@ function handlerRemoveSingleBook(idToDelete) {
     localStorage.setItem(BOOKS_KEY, JSON.stringify(updatedBooksList));
   //window.location.href = "./index.html";
   updateShoppingCart();
-  
+
 }
 
 function handlerClearBasket(evt) {
