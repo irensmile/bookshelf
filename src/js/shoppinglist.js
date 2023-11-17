@@ -20,8 +20,19 @@ var books = null;
 updateShoppingCart();
 
 elements.container.addEventListener('click', (event) => {
-  if (event.target.classList.contains('icon-delete'))
-    handlerRemoveSingleBook(event.target.parentNode.dataset.id);
+
+  var btn = null
+  if (event.target.classList.contains('icon-delete')) {
+    btn = event.target.parentNode;
+  }
+  else if (event.target.parentNode.classList.contains('icon-delete')) {
+    btn = event.target.parentNode.parentNode;
+  }
+  else if (event.target.classList.contains('btn-delete')) {
+    btn = event.target;
+  }
+  if (btn)
+    handlerRemoveSingleBook(btn.dataset.id)
 })
 
 function createMarkup(arr) {
