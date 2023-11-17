@@ -54,47 +54,6 @@ function booksMarkup(books) {
     }).join('');
 }
 
-// const httpRequest = new XMLHttpRequest();
-
-// function newList() {
-    
-    
-//     return `<div class = "books-list-name" ></div>
-//     <ul class="books-container">
-//     </ul>`
-// }
-
-// Наступний код треба видалити:
-// 1. Він виконується тільки раз при завантаженні сторінки
-// 2. У нас на даний момент немає виділеної категорії, яку треба завантажити
-// 3. Ми використовуємо бібліотеку axios для http запитів
-/*
-httpRequest.onreadystatechange = newList;
-httpRequest.open("GET", "https://books-backend.p.goit.global/books/category?category=selectedCategory", true);
-httpRequest.setRequestHeader(
-    "Content-Type",
-    "application/json",
-  );
-httpRequest.send();
-*/
-
-// Так само, категорії ще не завантажені на цей час.
-// Краще підписатися на клік батьківсьго елементу.
-/*
-const categoryItems = document.querySelectorAll('.categ-item');
-categoryItems.forEach(function(category) {
-    category.addEventListener("click", function() {
-        const selectedCategory = categoryItems.value;
-        const url = "https://books-backend.p.goit.global/books/category?category=" + selectedCategory;
-        axios.get(url)
-            .then(response => {
-                console.log(response.data);
-            })
-            .catch(error => console.error(error));
-
-    })
-})*/
-
 // Обробник кліку на категорії - завантажуємо книги для категорії і виділяємо акитивну категорію
 categoryList.addEventListener("click", async (e) => {
     e.preventDefault();
@@ -136,18 +95,6 @@ function populateCategoryHeader(categoryName) {
     const words = categoryName.split(" ")
     booksCategoryName.innerHTML = `<span class="dark-text">${words[0]}</span> ${words.slice(1).join(' ')}`;
 }
-
-// Це не працює - код виконується, коли кнопки ще не створені (або можуть бути перезавантажені)
-// Як варіант, можна підписатися на onclick до батьківського div, який завжди існує і далі визначить, коли клік приходить від кнопки
-// const buttonsForCateg = document.querySelectorAll(".books-btn");
-// console.log('Batoni', buttonsForCateg);
-// buttonsForCateg.forEach(function(button) {
-//     button.addEventListener("click", function() {
-//         const showList = categoryItems.map(url)
-//     list.insertAdjacentHTML("beforeend", showList)
-//     console.log(list)
-//     });
-// });
 
 list.addEventListener('click', async (event) => {
     // Тільки коли клікнули на кнопці, завантажуємо книги цієї категорії

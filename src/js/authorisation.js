@@ -8,6 +8,18 @@ document.addEventListener('DOMContentLoaded', function () {
   const signinForm = document.getElementById('signin-form');
   const submitButton = document.querySelector('.btn-sign-up');
 
+  const LOCAL_STORAGE_KEY = "user";
+  
+  function loadSavedUserOnStartup() {
+    var userData = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY))
+    if (userData) {
+      replaceSignupButtonWithUserCircle(userData);
+      authModal.style.display = 'none';
+    };
+  };
+  
+  loadSavedUserOnStartup();
+
   openModalBtn.addEventListener('click', function () {
     openAuthModal(authModal);
   });
@@ -52,9 +64,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   function saveUserData(userData) {
-    const existingUsers = JSON.parse(localStorage.getItem('users')) || [];
-    existingUsers.push(userData);
-    localStorage.setItem('users', JSON.stringify(existingUsers));
+    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(userData));
   }
 
   function updateButtonText(action) {
