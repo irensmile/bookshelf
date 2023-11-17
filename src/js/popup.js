@@ -1,6 +1,6 @@
 // =====================Логика открыть/закрыть модалку===========================
 import amazonLogo from '../images/amazon.png';
-import amazonDarkLogo from '../images/amazon_logo.svg';
+import amazonDarkLogo from '../images/amazon-darck.png';
 import appleBooksLogo from '../images/apple.png';
 import { throttle } from 'lodash';
 import { getbookDetais } from './books-api';
