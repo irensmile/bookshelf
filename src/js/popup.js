@@ -1,6 +1,7 @@
 // =====================Логика открыть/закрыть модалку===========================
-import amazonLogo from '../images/amazon_logo.svg';
-import appleBooksLogo from '../images/apple_books.svg';
+import amazonLogo from '../images/amazon.png';
+import amazonDarkLogo from '../images/amazon-darck.png';
+import appleBooksLogo from '../images/apple.png';
 import { throttle } from 'lodash';
 import { getbookDetais } from './books-api';
 
@@ -8,8 +9,6 @@ const elements = {
   coverModal: document.querySelector('.cover-modal'),
   modalCoverContent: document.querySelector('.modal-cover-content'),
   closeBtn: document.querySelector('.modal-btn-close'),
-  body: document.querySelector('body'),
-  //====================Добавление товара в корзину================
   addBtn: document.querySelector('.add'),
   removeBtn: document.querySelector('.remove'),
   openListBtn: document.querySelector('.open-list'),
@@ -32,7 +31,7 @@ elements.booksListElement.addEventListener('click', event => {
 async function getBookInfo(id) {
   try {
     const bookData = await getbookDetais(id);
-    // Записуємо id книжки в data tag, щоб знати, яка книга виділена
+
     elements.modalCoverContent.dataset.selectedBookId = bookData._id;
     markupModal(bookData);
     openModl();
@@ -76,13 +75,14 @@ function markupModal(data) {
 }
 
 function markupBuyLinks(buyLinks) {
-  return buyLinks
+  return buyLinks.slice(0, 2)
     .map(buyLink => {
       let sellerLogo = null;
       if (elements.body.classList.contains('dark-theme')) {
+        console.log('dark');
         switch (buyLink.name) {
           case 'Amazon': {
-            sellerLogo = `${amazonLogo}`;
+            sellerLogo = `${amazonDarkLogo}`;
             break;
           }
           case 'Apple Books': {
@@ -90,7 +90,7 @@ function markupBuyLinks(buyLinks) {
             break;
           }
           default: {
-            return '';
+            sellerLogo = `${appleBooksLogo}`;
           }
         }
       } else {
@@ -100,11 +100,11 @@ function markupBuyLinks(buyLinks) {
             break;
           }
           case 'Apple Books': {
-            sellerLogo = `${appleBooksLogo}`;
+           sellerLogo = `${appleBooksLogo}`;
             break;
           }
           default: {
-            return '';
+            sellerLogo = `${appleBooksLogo}`;
           }
         }
       }
@@ -144,7 +144,6 @@ function escCloseModal(e) {
   }
 }
 
-//====================Добавление товара в корзину================
 function addBookToList(book) {
   const booksInList = getBooksInList();
   const isBookInList = booksInList.some(
