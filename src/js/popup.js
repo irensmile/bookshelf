@@ -82,11 +82,11 @@ function markupBuyLinks(buyLinks) {
       if (elements.body.classList.contains('dark-theme')) {
         switch (buyLink.name) {
           case 'Amazon': {
-            sellerLogo = './images/amazon_logo.svg';
+            sellerLogo = './images/amazon-darck.png';
             break;
           }
           case 'Apple Books': {
-            sellerLogo = './images/apple_books.svg';
+            sellerLogo = './images/apple.png';
             break;
           }
           default: {
@@ -96,11 +96,11 @@ function markupBuyLinks(buyLinks) {
       } else {
         switch (buyLink.name) {
           case 'Amazon': {
-            sellerLogo = './images/amazon_logo.svg';
+            sellerLogo = './images/amazon.png';
             break;
           }
           case 'Apple Books': {
-            sellerLogo = './images/apple_books.svg';
+            sellerLogo = './images/apple.png';
             break;
           }
           default: {
