@@ -1,12 +1,17 @@
 document.addEventListener('DOMContentLoaded', function () {
   const authModal = document.getElementById('authModal');
-  const openModalBtn = document.getElementById('sign-in-button-main');
+  const openModalBtn = document.querySelector('.sign-in-button');
   const authFormClose = document.querySelector('.auth-form-close');
   const signupLink = document.getElementById('signup-link');
   const signinLink = document.getElementById('signin-link');
   const signupForm = document.getElementById('signup-form');
   const signinForm = document.getElementById('signin-form');
   const submitButton = document.querySelector('.btn-sign-up');
+  const mobileSignInButton = document.getElementById('sign-in-button');
+
+  mobileSignInButton.addEventListener('click', function () {
+    openAuthModal(authModal);
+  });
 
   const LOCAL_STORAGE_KEY = "user";
   
