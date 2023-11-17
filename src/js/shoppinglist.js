@@ -1,3 +1,7 @@
+import sprite from '../images/icons.svg';
+import amazonLogo from '../images/amazon_logo.svg';
+import appleBooksLogo from '../images/apple_books.svg';
+import booksPic from '../images/books.png';
 
 const elements = {
 container: document.querySelector('.js-list'),
@@ -8,14 +12,27 @@ message: document.querySelector('.js-message'),
 booksImg: document.querySelector('.js-books'),
 }
 
+
 const BOOKS_KEY = 'booksInList'
+
 var books = null;
 
 updateShoppingCart();
 
 elements.container.addEventListener('click', (event) => {
-  if (event.target.classList.contains('icon-delete'))
-    handlerRemoveSingleBook(event.target.parentNode.dataset.id);
+
+  var btn = null
+  if (event.target.classList.contains('icon-delete')) {
+    btn = event.target.parentNode;
+  }
+  else if (event.target.parentNode.classList.contains('icon-delete')) {
+    btn = event.target.parentNode.parentNode;
+  }
+  else if (event.target.classList.contains('btn-delete')) {
+    btn = event.target;
+  }
+  if (btn)
+    handlerRemoveSingleBook(btn.dataset.id)
 })
 
 function createMarkup(arr) {
@@ -36,7 +53,7 @@ function createMarkup(arr) {
 
   <button type="button" class="js-clear btn-delete", data-id=${_id}>
     <svg class="icon-delete" width="28" height="28">
-      <use href="./images/icons.svg#icon-trash"></use>
+      <use href="${sprite}#icon-trash"></use>
     </svg>
   </button>
 
@@ -50,32 +67,16 @@ function createBuyLinksMarkup(buyLinks) {
       switch (buyLink.name) {
         case 'Amazon': {
           cssClass = "social-icon-amazon"
-          sellerLogo = '../images/amazon_logo.svg';
+          sellerLogo = `${amazonLogo}`;
           break;
         }
         case 'Apple Books': {
-          sellerLogo = '../images/apple_books.svg';
+          sellerLogo = `${appleBooksLogo}`;
           cssClass = "social-icon-book";
           break;
         }
-        // case 'Barnes and Nobel': {
-        //   sellerLogo = '';
-        //   break;
-        // }
-        // case 'Books-A-Million': {
-        //   sellerLogo = '';
-        //   break;
-        // }
-        // case 'BookShop': {
-        //   sellerLogo = '';
-        //   break;
-        // }
-        // case 'Indie Bound': {
-        //   sellerLogo = '';
-        //   break;
-        // }
         default: {
-          sellerLogo = '../images/book.jpg';
+          sellerLogo = `${booksPic}`;
           cssClass = "social-icon-book";
         }
       }

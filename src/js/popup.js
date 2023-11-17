@@ -1,3 +1,7 @@
+// =====================Логика открыть/закрыть модалку===========================
+import amazonLogo from '../images/amazon.png';
+import amazonDarkLogo from '../images/amazon_logo.svg';
+import appleBooksLogo from '../images/apple.png';
 import { throttle } from 'lodash';
 import { getbookDetais } from './books-api';
 
@@ -71,35 +75,36 @@ function markupModal(data) {
 }
 
 function markupBuyLinks(buyLinks) {
-  return buyLinks
+  return buyLinks.slice(0, 2)
     .map(buyLink => {
       let sellerLogo = null;
       if (elements.body.classList.contains('dark-theme')) {
+        console.log('dark');
         switch (buyLink.name) {
           case 'Amazon': {
-            sellerLogo = './images/amazon-darck.png';
+            sellerLogo = `${amazonDarkLogo}`;
             break;
           }
           case 'Apple Books': {
-            sellerLogo = './images/apple.png';
+            sellerLogo = `${appleBooksLogo}`;
             break;
           }
           default: {
-            return '';
+            sellerLogo = `${appleBooksLogo}`;
           }
         }
       } else {
         switch (buyLink.name) {
           case 'Amazon': {
-            sellerLogo = './images/amazon.png';
+            sellerLogo = `${amazonLogo}`;
             break;
           }
           case 'Apple Books': {
-            sellerLogo = './images/apple.png';
+           sellerLogo = `${appleBooksLogo}`;
             break;
           }
           default: {
-            return '';
+            sellerLogo = `${appleBooksLogo}`;
           }
         }
       }
