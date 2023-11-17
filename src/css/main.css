@@ -107,6 +107,21 @@ body {
   flex-direction: row;
   flex-wrap: nowrap;
   /* justify-content: space-around; */
+  padding: 40px 20px 0 20px;
+}
+
+@media only screen and (min-width: 768px) {
+  .main-page-structure {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .main-page-structure {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
 }
 
 .container {
