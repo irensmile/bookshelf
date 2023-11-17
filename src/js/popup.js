@@ -1,6 +1,6 @@
 // =====================Логика открыть/закрыть модалку===========================
-
-import axios from 'axios';
+import amazonLogo from '../images/amazon_logo.svg';
+import appleBooksLogo from '../images/apple_books.svg';
 import { throttle } from 'lodash';
 import { getbookDetais } from './books-api';
 
@@ -82,11 +82,11 @@ function markupBuyLinks(buyLinks) {
       if (elements.body.classList.contains('dark-theme')) {
         switch (buyLink.name) {
           case 'Amazon': {
-            sellerLogo = './images/amazon_logo.svg';
+            sellerLogo = `${amazonLogo}`;
             break;
           }
           case 'Apple Books': {
-            sellerLogo = './images/apple_books.svg';
+            sellerLogo = `${appleBooksLogo}`;
             break;
           }
           default: {
@@ -96,11 +96,11 @@ function markupBuyLinks(buyLinks) {
       } else {
         switch (buyLink.name) {
           case 'Amazon': {
-            sellerLogo = './images/amazon_logo.svg';
+            sellerLogo = `${amazonLogo}`;
             break;
           }
           case 'Apple Books': {
-            sellerLogo = './images/apple_books.svg';
+            sellerLogo = `${appleBooksLogo}`;
             break;
           }
           default: {
