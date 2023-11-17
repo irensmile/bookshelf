@@ -215,7 +215,7 @@ border-radius: 8px;
   display: flex;
   position: absolute;
   border: 2px solid var(--same-blue);
-  background-color: var(--same-white);
+  background-color: var(--same-blue);
   top: 14px;
   right: 14px;
 
