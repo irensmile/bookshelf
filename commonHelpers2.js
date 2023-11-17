@@ -1,4 +1,4 @@
-import{a as d,b as u}from"./assets/scroll-up-8557c663.js";const m="/project-ScriptMasters14/assets/icons-3746b069.svg",b="/project-ScriptMasters14/assets/books1-x-com-92ca4e24.png",t={container:document.querySelector(".js-list"),totalQuantity:document.querySelector(".js-quantity"),clearBtn:document.querySelector(".js-clear"),pageName:document.querySelector(".js-title"),message:document.querySelector(".js-message"),booksImg:document.querySelector(".js-books")},l="booksInList";var i=null;n();t.container.addEventListener("click",s=>{var e=null;s.target.classList.contains("icon-delete")?e=s.target.parentNode:s.target.parentNode.classList.contains("icon-delete")?e=s.target.parentNode.parentNode:s.target.classList.contains("btn-delete")&&(e=s.target),e&&y(e.dataset.id)});function h(s){return s.map(({_id:e,book_image:o,title:a,list_name:c,description:r,author:p,buy_links:g})=>`
+import"./assets/scroll-up-7b06196d.js";const d="/project-ScriptMasters14/assets/icons-3746b069.svg",u="/project-ScriptMasters14/assets/amazon_logo-da5e1962.svg",m="/project-ScriptMasters14/assets/apple_books-2f3ab6e1.svg",b="/project-ScriptMasters14/assets/books1-x-com-92ca4e24.png",t={container:document.querySelector(".js-list"),totalQuantity:document.querySelector(".js-quantity"),clearBtn:document.querySelector(".js-clear"),pageName:document.querySelector(".js-title"),message:document.querySelector(".js-message"),booksImg:document.querySelector(".js-books")},l="booksInList";var i=null;n();t.container.addEventListener("click",s=>{var e=null;s.target.classList.contains("icon-delete")?e=s.target.parentNode:s.target.parentNode.classList.contains("icon-delete")?e=s.target.parentNode.parentNode:s.target.classList.contains("btn-delete")&&(e=s.target),e&&y(e.dataset.id)});function h(s){return s.map(({_id:e,book_image:o,title:a,list_name:c,description:r,author:p,buy_links:g})=>`
 <li data-id='${e}' class='shopping-card-item'>
     <img src='${o}' alt ='${a}' class='shopping-img'>
     <div class="shopping-info">
@@ -15,11 +15,11 @@ import{a as d,b as u}from"./assets/scroll-up-8557c663.js";const m="/project-Scri
 
   <button type="button" class="js-clear btn-delete", data-id=${e}>
     <svg class="icon-delete" width="28" height="28">
-      <use href="${m}#icon-trash"></use>
+      <use href="${d}#icon-trash"></use>
     </svg>
   </button>
 
-</li>`).join("")}function k(s){return s.slice(0,2).map(e=>{let o=null,a=null;switch(e.name){case"Amazon":{a="social-icon-amazon",o=`${u}`;break}case"Apple Books":{o=`${d}`,a="social-icon-book";break}default:o=`${b}`,a="social-icon-book"}return`<li class = "book-icon">
+</li>`).join("")}function k(s){return s.slice(0,2).map(e=>{let o=null,a=null;switch(e.name){case"Amazon":{a="social-icon-amazon",o=`${u}`;break}case"Apple Books":{o=`${m}`,a="social-icon-book";break}default:o=`${b}`,a="social-icon-book"}return`<li class = "book-icon">
       <a
         class=${a}
         href=${e.url}
