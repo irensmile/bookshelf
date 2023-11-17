@@ -1,7 +1,7 @@
 import sprite from '../images/icons.svg';
 import amazonLogo from '../images/amazon_logo.svg';
 import appleBooksLogo from '../images/apple_books.svg';
-import booksPic from '../images/books.jpg';
+import booksPic from '../images/books.png';
 
 const elements = {
 container: document.querySelector('.js-list'),
