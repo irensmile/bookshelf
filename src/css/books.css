@@ -9,8 +9,8 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    padding-left: 20px;
-    padding-right: 20px;
+    /* padding-left: 20px;
+    padding-right: 20px; */
 
 }
 
@@ -201,7 +201,7 @@
         overflow-wrap: break-word;
         text-overflow: unset;
         overflow: hidden;
-        
+        padding-left: 32px;
     }
 
     .book-author {
@@ -250,8 +250,9 @@
 
 @media only screen and (min-width: 1280px) {
     .books-section {
-        padding-left: 24px;
-        padding-right: 24px;
+        /* padding-left: 24px;
+        padding-right: 24px; */
+        padding-left: 40px;
         min-width: 860px;
         justify-content: flex-start;
         
@@ -260,6 +261,7 @@
     #books-category-name {
         min-width: 860px;
         max-width: 860px;
+        padding-left: 0;
         overflow-wrap: break-word;
         text-overflow: unset;
         overflow: hidden;
