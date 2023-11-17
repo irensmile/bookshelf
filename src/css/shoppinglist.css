@@ -294,6 +294,7 @@ social-icon-amazon:hover {
   margin-right: 65.5px;
   margin-left: 65.5px;
   width: 244px;
+  color: var(--primary-color);
 }
 
 @media screen and (min-width: 768px) {
