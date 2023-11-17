@@ -1,6 +1,3 @@
-// =====================Логика открыть/закрыть модалку===========================
-
-import axios from 'axios';
 import { throttle } from 'lodash';
 import { getbookDetais } from './books-api';
 
@@ -8,8 +5,6 @@ const elements = {
   coverModal: document.querySelector('.cover-modal'),
   modalCoverContent: document.querySelector('.modal-cover-content'),
   closeBtn: document.querySelector('.modal-btn-close'),
-  body: document.querySelector('body'),
-  //====================Добавление товара в корзину================
   addBtn: document.querySelector('.add'),
   removeBtn: document.querySelector('.remove'),
   openListBtn: document.querySelector('.open-list'),
@@ -32,7 +27,7 @@ elements.booksListElement.addEventListener('click', event => {
 async function getBookInfo(id) {
   try {
     const bookData = await getbookDetais(id);
-    // Записуємо id книжки в data tag, щоб знати, яка книга виділена
+
     elements.modalCoverContent.dataset.selectedBookId = bookData._id;
     markupModal(bookData);
     openModl();
@@ -144,7 +139,6 @@ function escCloseModal(e) {
   }
 }
 
-//====================Добавление товара в корзину================
 function addBookToList(book) {
   const booksInList = getBooksInList();
   const isBookInList = booksInList.some(
