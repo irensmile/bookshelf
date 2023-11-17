@@ -184,6 +184,18 @@
       text-align: center;
     }
   }
+
+        @media only screen and (max-width: 767px) {
+          .fsocial__title {
+            margin-bottom: 15px
+          }
+        }
+    
+        @media only screen and (max-width: 767px) {
+          .footer-address__list {
+            margin-bottom: 15px;
+          }
+        }
   
   .fsocial__list {
     display: -webkit-box;
