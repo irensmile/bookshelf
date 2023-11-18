@@ -1,7 +1,10 @@
 import sprite from '../images/icons.svg';
-import amazonLogo from '../images/amazon_logo.svg';
-import appleBooksLogo from '../images/apple_books.svg';
-import booksPic from '../images/books.png';
+// import amazonLogo from '../images/amazon_logo.svg';
+// import appleBooksLogo from '../images/apple_books.svg';
+// import booksPic from '../images/books.png';
+import amazonLogo from '../images/amazon.png';
+import amazonDarkLogo from '../images/amazon-darck.png';
+import appleBooksLogo from '../images/apple.png';
 
 const elements = {
 container: document.querySelector('.js-list'),
@@ -10,6 +13,7 @@ clearBtn: document.querySelector('.js-clear'),
 pageName: document.querySelector('.js-title'),
 message: document.querySelector('.js-message'),
 booksImg: document.querySelector('.js-books'),
+body: document.querySelector('body'),
 }
 
 
@@ -61,13 +65,16 @@ function createMarkup(arr) {
 }
 
 function createBuyLinksMarkup(buyLinks) {
-    return buyLinks.slice(0, 2).map((buyLink) => {
+    return buyLinks.slice(0, 2)
+    .map((buyLink) => {
       let sellerLogo = null;
       let cssClass = null;
+      if (elements.body.classList.contains('dark-theme')) {
+        console.log('dark');
       switch (buyLink.name) {
         case 'Amazon': {
           cssClass = "social-icon-amazon"
-          sellerLogo = `${amazonLogo}`;
+          sellerLogo = `${amazonDarkLogo}`;
           break;
         }
         case 'Apple Books': {
@@ -76,8 +83,23 @@ function createBuyLinksMarkup(buyLinks) {
           break;
         }
         default: {
-          sellerLogo = `${booksPic}`;
+          sellerLogo = `${appleBooksLogo}`;
           cssClass = "social-icon-book";
+        }
+      }
+    } else {
+        switch (buyLink.name) {
+          case 'Amazon': {
+            sellerLogo = `${amazonLogo}`;
+            break;
+          }
+          case 'Apple Books': {
+           sellerLogo = `${appleBooksLogo}`;
+            break;
+          }
+          default: {
+            sellerLogo = `${appleBooksLogo}`;
+          }
         }
       }
       return `<li class = "book-icon">
@@ -88,11 +110,13 @@ function createBuyLinksMarkup(buyLinks) {
       rel="nofollow noopener noreferree"
         aria-label="Book icon"
       >
-      <img src=${sellerLogo} alt="${buyLink.name}" width ='32px' height='32px'/>
+      <img src=${sellerLogo} class= "social-icon" alt="${buyLink.name}" width ='32px' height='32px'/>
       </a>
   </li>`}
   ).join('');
 }
+
+
 
 function updateShoppingCart() {
   books = JSON.parse(localStorage.getItem(BOOKS_KEY)) ?? [];

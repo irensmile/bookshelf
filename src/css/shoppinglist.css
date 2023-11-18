@@ -255,14 +255,15 @@ border-radius: 8px;
   height: 100%;
 }
 
-.social-icon-amazon {
+.social-icon {
   filter: grayscale(100%);
   transition: filter 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.social-icon-amazon:hover {
-  filter: drop-shadow(0px 3px 3px var(--hover));
-}
+.social-icon:hover {
+    filter: drop-shadow(0px 3px 3px var(--hover));
+ }
+
 
 .socials_list {
   display: flex;
