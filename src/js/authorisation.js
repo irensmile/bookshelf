@@ -59,6 +59,7 @@ document.addEventListener('DOMContentLoaded', function () {
     saveUserData(userData);
 
      replaceSignupButtonWithUserCircle(userData);
+     replaceMobileSignupButtonWithUserCircle(userData)
 
     authModal.style.display = 'none';
     this.reset();
@@ -89,5 +90,13 @@ document.addEventListener('DOMContentLoaded', function () {
     const rightHeader = document.querySelector('.right-col'); 
     rightHeader.appendChild(userCircle);
 }
+
+function replaceMobileSignupButtonWithUserCircle(user) {
+  const mobileSignupButton = document.getElementById('sign-in-button'); 
+  mobileSignupButton.style.display = 'none';
+}
 });
+ 
+
+
 
